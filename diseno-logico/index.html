@@ -1,0 +1,1473 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../diseno-er/" rel="prev"/>
+<link href="../implementacion/script-sql/" rel="next"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.1" name="generator"/>
+<title>Diseño Lógico - Documentación Mc Ilerna Albor Croft</title>
+<link href="../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="red" data-md-color-primary="red" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#diseno-logico-y-modelo-relacional">
+          Saltar a contenido
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Cabecera" class="md-header__inner md-grid">
+<a aria-label="Documentación Mc Ilerna Albor Croft" class="md-header__button md-logo" data-md-component="logo" href=".." title="Documentación Mc Ilerna Albor Croft">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Documentación Mc Ilerna Albor Croft
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Diseño Lógico
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="red" data-md-color-media="" data-md-color-primary="red" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<input aria-hidden="true" class="md-option" data-md-color-accent="red" data-md-color-media="" data-md-color-primary="red" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Búsqueda" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Búsqueda" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Buscar" class="md-search__options">
+<button aria-label="Limpiar" class="md-search__icon md-icon" tabindex="-1" title="Limpiar" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Pestañas" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../requerimientos/">
+        
+  
+  
+    
+  
+  Requerimientos
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../analisis/">
+        
+  
+  
+    
+  
+  Análisis
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../diseno-er/">
+          
+  
+  
+  Diseño
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../implementacion/script-sql/">
+          
+  
+  
+  Implementación
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../seguridad/">
+        
+  
+  
+    
+  
+  Seguridad
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navegación" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Documentación Mc Ilerna Albor Croft" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Documentación Mc Ilerna Albor Croft">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Documentación Mc Ilerna Albor Croft
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../requerimientos/">
+<span class="md-ellipsis">
+    
+  
+    Requerimientos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../analisis/">
+<span class="md-ellipsis">
+    
+  
+    Análisis
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Diseño
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Diseño
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../diseno-er/">
+<span class="md-ellipsis">
+    
+  
+    Modelo Entidad-Relación
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Diseño Lógico
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Diseño Lógico
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modelo-relacional-completo">
+<span class="md-ellipsis">
+      
+        Modelo Relacional Completo
+      
+    </span>
+</a>
+<nav aria-label="Modelo Relacional Completo" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#esquema-de-tablas">
+<span class="md-ellipsis">
+      
+        Esquema de Tablas
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diccionario-de-datos">
+<span class="md-ellipsis">
+      
+        Diccionario de Datos
+      
+    </span>
+</a>
+<nav aria-label="Diccionario de Datos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-repartidor">
+<span class="md-ellipsis">
+      
+        Tabla: REPARTIDOR
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-producto">
+<span class="md-ellipsis">
+      
+        Tabla: PRODUCTO
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-menu">
+<span class="md-ellipsis">
+      
+        Tabla: MENU
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-pedido">
+<span class="md-ellipsis">
+      
+        Tabla: PEDIDO
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-pedido_ventanilla">
+<span class="md-ellipsis">
+      
+        Tabla: PEDIDO_VENTANILLA
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-pedido_domicilio">
+<span class="md-ellipsis">
+      
+        Tabla: PEDIDO_DOMICILIO
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-composicion_menu">
+<span class="md-ellipsis">
+      
+        Tabla: COMPOSICION_MENU
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-detalle_pedido_producto">
+<span class="md-ellipsis">
+      
+        Tabla: DETALLE_PEDIDO_PRODUCTO
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-detalle_pedido_menu">
+<span class="md-ellipsis">
+      
+        Tabla: DETALLE_PEDIDO_MENU
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arquitectura-de-especializacion-extensiones-de-tabla">
+<span class="md-ellipsis">
+      
+        Arquitectura de Especialización: Extensiones de Tabla
+      
+    </span>
+</a>
+<nav aria-label="Arquitectura de Especialización: Extensiones de Tabla" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#concepto">
+<span class="md-ellipsis">
+      
+        Concepto
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#caracteristicas">
+<span class="md-ellipsis">
+      
+        Características
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diagrama-de-dependencias-completo">
+<span class="md-ellipsis">
+      
+        Diagrama de Dependencias Completo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#restricciones-de-integridad-resumen">
+<span class="md-ellipsis">
+      
+        Restricciones de Integridad Resumen
+      
+    </span>
+</a>
+<nav aria-label="Restricciones de Integridad Resumen" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integridad-de-entidad">
+<span class="md-ellipsis">
+      
+        Integridad de Entidad
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integridad-referencial">
+<span class="md-ellipsis">
+      
+        Integridad Referencial
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integridad-de-dominio">
+<span class="md-ellipsis">
+      
+        Integridad de Dominio
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integridad-semantica">
+<span class="md-ellipsis">
+      
+        Integridad Semántica
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuracion-tecnica">
+<span class="md-ellipsis">
+      
+        Configuración Técnica
+      
+    </span>
+</a>
+<nav aria-label="Configuración Técnica" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#motor-de-almacenamiento">
+<span class="md-ellipsis">
+      
+        Motor de Almacenamiento
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conjunto-de-caracteres">
+<span class="md-ellipsis">
+      
+        Conjunto de Caracteres
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#indices-recomendados">
+<span class="md-ellipsis">
+      
+        Índices Recomendados
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conclusiones-del-diseno-logico">
+<span class="md-ellipsis">
+      
+        Conclusiones del Diseño Lógico
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Implementación
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Implementación
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../implementacion/script-sql/">
+<span class="md-ellipsis">
+    
+  
+    Script SQL
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../implementacion/pruebas/">
+<span class="md-ellipsis">
+    
+  
+    Pruebas y Validación
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../seguridad/">
+<span class="md-ellipsis">
+    
+  
+    Seguridad
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modelo-relacional-completo">
+<span class="md-ellipsis">
+      
+        Modelo Relacional Completo
+      
+    </span>
+</a>
+<nav aria-label="Modelo Relacional Completo" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#esquema-de-tablas">
+<span class="md-ellipsis">
+      
+        Esquema de Tablas
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diccionario-de-datos">
+<span class="md-ellipsis">
+      
+        Diccionario de Datos
+      
+    </span>
+</a>
+<nav aria-label="Diccionario de Datos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-repartidor">
+<span class="md-ellipsis">
+      
+        Tabla: REPARTIDOR
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-producto">
+<span class="md-ellipsis">
+      
+        Tabla: PRODUCTO
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-menu">
+<span class="md-ellipsis">
+      
+        Tabla: MENU
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-pedido">
+<span class="md-ellipsis">
+      
+        Tabla: PEDIDO
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-pedido_ventanilla">
+<span class="md-ellipsis">
+      
+        Tabla: PEDIDO_VENTANILLA
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-pedido_domicilio">
+<span class="md-ellipsis">
+      
+        Tabla: PEDIDO_DOMICILIO
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-composicion_menu">
+<span class="md-ellipsis">
+      
+        Tabla: COMPOSICION_MENU
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-detalle_pedido_producto">
+<span class="md-ellipsis">
+      
+        Tabla: DETALLE_PEDIDO_PRODUCTO
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-detalle_pedido_menu">
+<span class="md-ellipsis">
+      
+        Tabla: DETALLE_PEDIDO_MENU
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arquitectura-de-especializacion-extensiones-de-tabla">
+<span class="md-ellipsis">
+      
+        Arquitectura de Especialización: Extensiones de Tabla
+      
+    </span>
+</a>
+<nav aria-label="Arquitectura de Especialización: Extensiones de Tabla" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#concepto">
+<span class="md-ellipsis">
+      
+        Concepto
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#caracteristicas">
+<span class="md-ellipsis">
+      
+        Características
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diagrama-de-dependencias-completo">
+<span class="md-ellipsis">
+      
+        Diagrama de Dependencias Completo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#restricciones-de-integridad-resumen">
+<span class="md-ellipsis">
+      
+        Restricciones de Integridad Resumen
+      
+    </span>
+</a>
+<nav aria-label="Restricciones de Integridad Resumen" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integridad-de-entidad">
+<span class="md-ellipsis">
+      
+        Integridad de Entidad
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integridad-referencial">
+<span class="md-ellipsis">
+      
+        Integridad Referencial
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integridad-de-dominio">
+<span class="md-ellipsis">
+      
+        Integridad de Dominio
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integridad-semantica">
+<span class="md-ellipsis">
+      
+        Integridad Semántica
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuracion-tecnica">
+<span class="md-ellipsis">
+      
+        Configuración Técnica
+      
+    </span>
+</a>
+<nav aria-label="Configuración Técnica" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#motor-de-almacenamiento">
+<span class="md-ellipsis">
+      
+        Motor de Almacenamiento
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conjunto-de-caracteres">
+<span class="md-ellipsis">
+      
+        Conjunto de Caracteres
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#indices-recomendados">
+<span class="md-ellipsis">
+      
+        Índices Recomendados
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conclusiones-del-diseno-logico">
+<span class="md-ellipsis">
+      
+        Conclusiones del Diseño Lógico
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="diseno-logico-y-modelo-relacional">Diseño Lógico y Modelo Relacional</h1>
+<p>El diseño lógico transforma el modelo conceptual E/R en un esquema relacional implementable en SQL. Este capítulo documenta el <strong>diccionario de datos completo</strong>, las <strong>restricciones de integridad</strong> y la <strong>arquitectura de especialización</strong> utilizada para los pedidos.</p>
+<hr/>
+<h2 id="modelo-relacional-completo">Modelo Relacional Completo</h2>
+<h3 id="esquema-de-tablas">Esquema de Tablas</h3>
+<p>El sistema se compone de <strong>9 tablas</strong> organizadas en tres categorías:</p>
+<div class="mermaid">graph TD
+    A[Tablas Maestras] --&gt; B[REPARTIDOR]
+    A --&gt; C[PRODUCTO]
+    A --&gt; D[MENU]
+
+    E[Tablas de Pedidos] --&gt; F[PEDIDO]
+    E --&gt; G[PEDIDO_VENTANILLA]
+    E --&gt; H[PEDIDO_DOMICILIO]
+
+    I[Tablas de Relación] --&gt; J[COMPOSICION_MENU]
+    I --&gt; K[DETALLE_PEDIDO_PRODUCTO]
+    I --&gt; L[DETALLE_PEDIDO_MENU]
+
+    F -.extensión.-&gt; G
+    F -.extensión.-&gt; H
+    H --&gt; B
+    J --&gt; D
+    J --&gt; C
+    K --&gt; F
+    K --&gt; C
+    L --&gt; F
+    L --&gt; D
+</div>
+<hr/>
+<h2 id="diccionario-de-datos">Diccionario de Datos</h2>
+<h3 id="tabla-repartidor">Tabla: REPARTIDOR</h3>
+<p><strong>Descripción:</strong> Almacena la información de los empleados repartidores que realizan entregas a domicilio.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Columna</th>
+<th style="text-align: left;">Tipo de Dato</th>
+<th style="text-align: left;">Restricciones</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>Num_Repartidor</code></td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;"><strong>PK</strong>, AUTO_INCREMENT, NOT NULL</td>
+<td style="text-align: left;">Identificador único del repartidor</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Nombre</code></td>
+<td style="text-align: left;">VARCHAR(50)</td>
+<td style="text-align: left;">NOT NULL</td>
+<td style="text-align: left;">Nombre del repartidor</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Apellido1</code></td>
+<td style="text-align: left;">VARCHAR(50)</td>
+<td style="text-align: left;">NOT NULL</td>
+<td style="text-align: left;">Primer apellido</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Apellido2</code></td>
+<td style="text-align: left;">VARCHAR(50)</td>
+<td style="text-align: left;">NULL</td>
+<td style="text-align: left;">Segundo apellido (opcional)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>DNI</code></td>
+<td style="text-align: left;">VARCHAR(9)</td>
+<td style="text-align: left;"><strong>UNIQUE</strong>, NOT NULL</td>
+<td style="text-align: left;">Documento de identidad (clave alternativa)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Telefono</code></td>
+<td style="text-align: left;">VARCHAR(15)</td>
+<td style="text-align: left;">NULL</td>
+<td style="text-align: left;">Teléfono de contacto</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Matricula_Moto</code></td>
+<td style="text-align: left;">VARCHAR(10)</td>
+<td style="text-align: left;">NULL</td>
+<td style="text-align: left;">Matrícula del vehículo asignado</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Turno</code></td>
+<td style="text-align: left;">CHAR(1)</td>
+<td style="text-align: left;">CHECK IN ('M','T','N'), NOT NULL</td>
+<td style="text-align: left;">Turno: Mañana, Tarde, Noche</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Claves:</strong>
+- <strong>Primaria:</strong> <code>Num_Repartidor</code>
+- <strong>Alternativa:</strong> <code>DNI</code> (UNIQUE)</p>
+<p><strong>Restricciones:</strong>
+- <code>CHECK (Turno IN ('M', 'T', 'N'))</code> - Solo permite valores válidos de turno</p>
+<hr/>
+<h3 id="tabla-producto">Tabla: PRODUCTO</h3>
+<p><strong>Descripción:</strong> Catálogo de productos individuales disponibles para la venta.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Columna</th>
+<th style="text-align: left;">Tipo de Dato</th>
+<th style="text-align: left;">Restricciones</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>Cod_Producto</code></td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;"><strong>PK</strong>, AUTO_INCREMENT, NOT NULL</td>
+<td style="text-align: left;">Código único del producto</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Nombre</code></td>
+<td style="text-align: left;">VARCHAR(100)</td>
+<td style="text-align: left;">NOT NULL</td>
+<td style="text-align: left;">Nombre comercial del producto</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Ingredientes</code></td>
+<td style="text-align: left;">TEXT</td>
+<td style="text-align: left;">NULL</td>
+<td style="text-align: left;">Descripción de ingredientes (gestión de alérgenos)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Precio</code></td>
+<td style="text-align: left;">DECIMAL(6,2)</td>
+<td style="text-align: left;">CHECK &gt; 0, NOT NULL</td>
+<td style="text-align: left;">Precio unitario actual</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Claves:</strong>
+- <strong>Primaria:</strong> <code>Cod_Producto</code></p>
+<p><strong>Restricciones:</strong>
+- <code>CHECK (Precio &gt; 0)</code> - El precio debe ser positivo</p>
+<hr/>
+<h3 id="tabla-menu">Tabla: MENU</h3>
+<p><strong>Descripción:</strong> Agrupaciones comerciales de productos con precio promocional.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Columna</th>
+<th style="text-align: left;">Tipo de Dato</th>
+<th style="text-align: left;">Restricciones</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>Cod_Menu</code></td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;"><strong>PK</strong>, AUTO_INCREMENT, NOT NULL</td>
+<td style="text-align: left;">Código único del menú</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Nombre</code></td>
+<td style="text-align: left;">VARCHAR(100)</td>
+<td style="text-align: left;">NOT NULL</td>
+<td style="text-align: left;">Nombre comercial del menú</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Descripcion</code></td>
+<td style="text-align: left;">TEXT</td>
+<td style="text-align: left;">NULL</td>
+<td style="text-align: left;">Descripción detallada de la oferta</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Precio</code></td>
+<td style="text-align: left;">DECIMAL(6,2)</td>
+<td style="text-align: left;">CHECK &gt; 0, NOT NULL</td>
+<td style="text-align: left;">Precio del menú completo</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Claves:</strong>
+- <strong>Primaria:</strong> <code>Cod_Menu</code></p>
+<p><strong>Restricciones:</strong>
+- <code>CHECK (Precio &gt; 0)</code> - El precio debe ser positivo</p>
+<hr/>
+<h3 id="tabla-pedido">Tabla: PEDIDO</h3>
+<p><strong>Descripción:</strong> Tabla base que registra todos los pedidos con numeración correlativa única.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Columna</th>
+<th style="text-align: left;">Tipo de Dato</th>
+<th style="text-align: left;">Restricciones</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>Num_Pedido</code></td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;"><strong>PK</strong>, AUTO_INCREMENT, NOT NULL</td>
+<td style="text-align: left;">Número correlativo único de pedido</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Fecha</code></td>
+<td style="text-align: left;">DATE</td>
+<td style="text-align: left;">NOT NULL</td>
+<td style="text-align: left;">Fecha del pedido</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Hora</code></td>
+<td style="text-align: left;">TIME</td>
+<td style="text-align: left;">NOT NULL</td>
+<td style="text-align: left;">Hora del pedido</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Claves:</strong>
+- <strong>Primaria:</strong> <code>Num_Pedido</code></p>
+<p><strong>Notas:</strong>
+- Esta tabla es la <strong>entidad base</strong> de la jerarquía de especialización
+- Cada registro debe tener exactamente una extensión (ventanilla o domicilio)</p>
+<hr/>
+<h3 id="tabla-pedido_ventanilla">Tabla: PEDIDO_VENTANILLA</h3>
+<p><strong>Descripción:</strong> Extensión de PEDIDO para pedidos realizados en ventanilla.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Columna</th>
+<th style="text-align: left;">Tipo de Dato</th>
+<th style="text-align: left;">Restricciones</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>Num_Pedido</code></td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;"><strong>PK</strong>, <strong>FK</strong> → PEDIDO, NOT NULL</td>
+<td style="text-align: left;">Referencia al pedido base</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Num_Ventanilla</code></td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;">NOT NULL</td>
+<td style="text-align: left;">Número de ventanilla donde se atendió</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Claves:</strong>
+- <strong>Primaria:</strong> <code>Num_Pedido</code>
+- <strong>Foránea:</strong> <code>Num_Pedido</code> → <code>PEDIDO(Num_Pedido)</code> ON DELETE CASCADE</p>
+<p><strong>Cardinalidad:</strong> 1:1 con PEDIDO (extensión)</p>
+<hr/>
+<h3 id="tabla-pedido_domicilio">Tabla: PEDIDO_DOMICILIO</h3>
+<p><strong>Descripción:</strong> Extensión de PEDIDO para pedidos con entrega a domicilio.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Columna</th>
+<th style="text-align: left;">Tipo de Dato</th>
+<th style="text-align: left;">Restricciones</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>Num_Pedido</code></td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;"><strong>PK</strong>, <strong>FK</strong> → PEDIDO, NOT NULL</td>
+<td style="text-align: left;">Referencia al pedido base</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Telefono_Contacto</code></td>
+<td style="text-align: left;">VARCHAR(15)</td>
+<td style="text-align: left;">NOT NULL</td>
+<td style="text-align: left;">Teléfono del cliente</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Poblacion</code></td>
+<td style="text-align: left;">VARCHAR(100)</td>
+<td style="text-align: left;">NOT NULL</td>
+<td style="text-align: left;">Población de entrega</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Direccion_Entrega</code></td>
+<td style="text-align: left;">VARCHAR(200)</td>
+<td style="text-align: left;">NOT NULL</td>
+<td style="text-align: left;">Dirección completa de entrega</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Num_Repartidor</code></td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;"><strong>FK</strong> → REPARTIDOR, NOT NULL</td>
+<td style="text-align: left;">Repartidor asignado</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Claves:</strong>
+- <strong>Primaria:</strong> <code>Num_Pedido</code>
+- <strong>Foráneas:</strong> 
+  - <code>Num_Pedido</code> → <code>PEDIDO(Num_Pedido)</code> ON DELETE CASCADE
+  - <code>Num_Repartidor</code> → <code>REPARTIDOR(Num_Repartidor)</code></p>
+<p><strong>Cardinalidad:</strong> 
+- 1:1 con PEDIDO (extensión)
+- N:1 con REPARTIDOR (un repartidor puede entregar múltiples pedidos)</p>
+<hr/>
+<h3 id="tabla-composicion_menu">Tabla: COMPOSICION_MENU</h3>
+<p><strong>Descripción:</strong> Tabla de relación N:M que define qué productos componen cada menú.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Columna</th>
+<th style="text-align: left;">Tipo de Dato</th>
+<th style="text-align: left;">Restricciones</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>Cod_Menu</code></td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;"><strong>PK</strong>, <strong>FK</strong> → MENU, NOT NULL</td>
+<td style="text-align: left;">Código del menú</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Cod_Producto</code></td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;"><strong>PK</strong>, <strong>FK</strong> → PRODUCTO, NOT NULL</td>
+<td style="text-align: left;">Código del producto</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Cantidad</code></td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;">CHECK &gt; 0, NOT NULL</td>
+<td style="text-align: left;">Unidades del producto en el menú</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Claves:</strong>
+- <strong>Primaria:</strong> (<code>Cod_Menu</code>, <code>Cod_Producto</code>)
+- <strong>Foráneas:</strong>
+  - <code>Cod_Menu</code> → <code>MENU(Cod_Menu)</code> ON DELETE CASCADE
+  - <code>Cod_Producto</code> → <code>PRODUCTO(Cod_Producto)</code></p>
+<p><strong>Restricciones:</strong>
+- <code>CHECK (Cantidad &gt; 0)</code> - La cantidad debe ser positiva</p>
+<p><strong>Ejemplo:</strong> El Menú Ahorro puede contener 1 Hamburguesa + 1 Bebida + 1 Patatas</p>
+<hr/>
+<h3 id="tabla-detalle_pedido_producto">Tabla: DETALLE_PEDIDO_PRODUCTO</h3>
+<p><strong>Descripción:</strong> Líneas de pedido para productos individuales (relación N:M entre PEDIDO y PRODUCTO).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Columna</th>
+<th style="text-align: left;">Tipo de Dato</th>
+<th style="text-align: left;">Restricciones</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>Num_Pedido</code></td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;"><strong>PK</strong>, <strong>FK</strong> → PEDIDO, NOT NULL</td>
+<td style="text-align: left;">Número de pedido</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Cod_Producto</code></td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;"><strong>PK</strong>, <strong>FK</strong> → PRODUCTO, NOT NULL</td>
+<td style="text-align: left;">Código del producto</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Cantidad</code></td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;">CHECK &gt; 0, NOT NULL</td>
+<td style="text-align: left;">Unidades solicitadas</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Precio_Venta</code></td>
+<td style="text-align: left;">DECIMAL(6,2)</td>
+<td style="text-align: left;">CHECK &gt; 0, NOT NULL</td>
+<td style="text-align: left;">Precio unitario en el momento de la venta</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Claves:</strong>
+- <strong>Primaria:</strong> (<code>Num_Pedido</code>, <code>Cod_Producto</code>)
+- <strong>Foráneas:</strong>
+  - <code>Num_Pedido</code> → <code>PEDIDO(Num_Pedido)</code> ON DELETE CASCADE
+  - <code>Cod_Producto</code> → <code>PRODUCTO(Cod_Producto)</code></p>
+<p><strong>Restricciones:</strong>
+- <code>CHECK (Cantidad &gt; 0)</code>
+- <code>CHECK (Precio_Venta &gt; 0)</code></p>
+<p><strong>Nota:</strong> <code>Precio_Venta</code> permite mantener histórico de precios y aplicar descuentos sin modificar el catálogo.</p>
+<hr/>
+<h3 id="tabla-detalle_pedido_menu">Tabla: DETALLE_PEDIDO_MENU</h3>
+<p><strong>Descripción:</strong> Líneas de pedido para menús (relación N:M entre PEDIDO y MENU).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Columna</th>
+<th style="text-align: left;">Tipo de Dato</th>
+<th style="text-align: left;">Restricciones</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>Num_Pedido</code></td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;"><strong>PK</strong>, <strong>FK</strong> → PEDIDO, NOT NULL</td>
+<td style="text-align: left;">Número de pedido</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Cod_Menu</code></td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;"><strong>PK</strong>, <strong>FK</strong> → MENU, NOT NULL</td>
+<td style="text-align: left;">Código del menú</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Cantidad</code></td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;">CHECK &gt; 0, NOT NULL</td>
+<td style="text-align: left;">Unidades solicitadas</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Precio_Venta</code></td>
+<td style="text-align: left;">DECIMAL(6,2)</td>
+<td style="text-align: left;">CHECK &gt; 0, NOT NULL</td>
+<td style="text-align: left;">Precio del menú en el momento de la venta</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Claves:</strong>
+- <strong>Primaria:</strong> (<code>Num_Pedido</code>, <code>Cod_Menu</code>)
+- <strong>Foráneas:</strong>
+  - <code>Num_Pedido</code> → <code>PEDIDO(Num_Pedido)</code> ON DELETE CASCADE
+  - <code>Cod_Menu</code> → <code>MENU(Cod_Menu)</code></p>
+<p><strong>Restricciones:</strong>
+- <code>CHECK (Cantidad &gt; 0)</code>
+- <code>CHECK (Precio_Venta &gt; 0)</code></p>
+<hr/>
+<h2 id="arquitectura-de-especializacion-extensiones-de-tabla">Arquitectura de Especialización: Extensiones de Tabla</h2>
+<h3 id="concepto">Concepto</h3>
+<p>La jerarquía de pedidos se implementa mediante el patrón <strong>Table Extension</strong> (Extensión de Tabla), donde:</p>
+<ol>
+<li><strong>Tabla Base:</strong> <code>PEDIDO</code> contiene atributos comunes a todos los pedidos</li>
+<li><strong>Tablas de Extensión:</strong> <code>PEDIDO_VENTANILLA</code> y <code>PEDIDO_DOMICILIO</code> contienen atributos específicos</li>
+</ol>
+<h3 id="caracteristicas">Características</h3>
+<div class="mermaid">erDiagram
+    PEDIDO ||--|| PEDIDO_VENTANILLA : "extiende (1:1)"
+    PEDIDO ||--|| PEDIDO_DOMICILIO : "extiende (1:1)"
+
+    PEDIDO {
+        int Num_Pedido PK
+        date Fecha
+        time Hora
+    }
+
+    PEDIDO_VENTANILLA {
+        int Num_Pedido PK_FK
+        int Num_Ventanilla
+    }
+
+    PEDIDO_DOMICILIO {
+        int Num_Pedido PK_FK
+        string Telefono_Contacto
+        string Poblacion
+        string Direccion_Entrega
+        int Num_Repartidor FK
+    }
+</div>
+<p><strong>Ventajas:</strong>
+- ✅ <strong>Integridad:</strong> <code>ON DELETE CASCADE</code> garantiza que al eliminar un pedido base se eliminan sus extensiones
+- ✅ <strong>Eficiencia:</strong> No hay campos NULL innecesarios
+- ✅ <strong>Escalabilidad:</strong> Fácil agregar nuevos tipos de pedido (app móvil, tótem)
+- ✅ <strong>Consultas:</strong> Se puede consultar <code>PEDIDO</code> para estadísticas generales o hacer JOIN para detalles específicos</p>
+<p><strong>Consulta de ejemplo:</strong>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">-- Todos los pedidos con su tipo</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">Num_Pedido</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">Fecha</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">Hora</span><span class="p">,</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">       </span><span class="k">CASE</span><span class="w"> </span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">           </span><span class="k">WHEN</span><span class="w"> </span><span class="n">pv</span><span class="p">.</span><span class="n">Num_Pedido</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">'Ventanilla'</span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">           </span><span class="k">WHEN</span><span class="w"> </span><span class="n">pd</span><span class="p">.</span><span class="n">Num_Pedido</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">'Domicilio'</span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">       </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">Tipo_Pedido</span>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="k">FROM</span><span class="w"> </span><span class="n">PEDIDO</span><span class="w"> </span><span class="n">p</span>
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">PEDIDO_VENTANILLA</span><span class="w"> </span><span class="n">pv</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">Num_Pedido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pv</span><span class="p">.</span><span class="n">Num_Pedido</span>
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">PEDIDO_DOMICILIO</span><span class="w"> </span><span class="n">pd</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">Num_Pedido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pd</span><span class="p">.</span><span class="n">Num_Pedido</span><span class="p">;</span>
+</code></pre></div></p>
+<hr/>
+<h2 id="diagrama-de-dependencias-completo">Diagrama de Dependencias Completo</h2>
+<div class="mermaid">graph LR
+    PEDIDO --&gt; PEDIDO_VENTANILLA
+    PEDIDO --&gt; PEDIDO_DOMICILIO
+    PEDIDO_DOMICILIO --&gt; REPARTIDOR
+
+    PEDIDO --&gt; DETALLE_PEDIDO_PRODUCTO
+    PEDIDO --&gt; DETALLE_PEDIDO_MENU
+
+    PRODUCTO --&gt; DETALLE_PEDIDO_PRODUCTO
+    PRODUCTO --&gt; COMPOSICION_MENU
+
+    MENU --&gt; DETALLE_PEDIDO_MENU
+    MENU --&gt; COMPOSICION_MENU
+
+    style PEDIDO fill:#ff6b6b
+    style REPARTIDOR fill:#4ecdc4
+    style PRODUCTO fill:#95e1d3
+    style MENU fill:#95e1d3
+</div>
+<p><strong>Leyenda:</strong>
+- 🔴 Tabla base de jerarquía
+- 🔵 Tablas maestras
+- 🟢 Tablas de catálogo</p>
+<hr/>
+<h2 id="restricciones-de-integridad-resumen">Restricciones de Integridad Resumen</h2>
+<h3 id="integridad-de-entidad">Integridad de Entidad</h3>
+<ul>
+<li>Todas las tablas tienen <strong>clave primaria</strong> definida</li>
+<li>Uso de <strong>AUTO_INCREMENT</strong> para claves surrogadas</li>
+<li><strong>NOT NULL</strong> en todas las claves primarias</li>
+</ul>
+<h3 id="integridad-referencial">Integridad Referencial</h3>
+<ul>
+<li><strong>9 relaciones de clave foránea</strong> implementadas</li>
+<li><strong>ON DELETE CASCADE</strong> en extensiones de pedido y tablas de detalle</li>
+<li><strong>ON DELETE RESTRICT</strong> (por defecto) en referencias a catálogos</li>
+</ul>
+<h3 id="integridad-de-dominio">Integridad de Dominio</h3>
+<ul>
+<li><strong>CHECK (Precio &gt; 0)</strong> en productos y menús</li>
+<li><strong>CHECK (Cantidad &gt; 0)</strong> en todas las tablas de detalle</li>
+<li><strong>CHECK (Turno IN ('M','T','N'))</strong> en repartidores</li>
+<li><strong>UNIQUE (DNI)</strong> en repartidores</li>
+</ul>
+<h3 id="integridad-semantica">Integridad Semántica</h3>
+<ul>
+<li>Un pedido debe ser <strong>exactamente</strong> de ventanilla <strong>o</strong> de domicilio (no ambos, no ninguno)</li>
+<li>Esta restricción se implementa a nivel de aplicación o mediante triggers</li>
+</ul>
+<hr/>
+<h2 id="configuracion-tecnica">Configuración Técnica</h2>
+<h3 id="motor-de-almacenamiento">Motor de Almacenamiento</h3>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">ENGINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InnoDB</span>
+</code></pre></div>
+<strong>Justificación:</strong> Soporte completo para transacciones ACID y claves foráneas.</p>
+<h3 id="conjunto-de-caracteres">Conjunto de Caracteres</h3>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">DEFAULT</span><span class="w"> </span><span class="n">CHARSET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">utf8mb4</span><span class="w"> </span><span class="k">COLLATE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">utf8mb4_unicode_ci</span>
+</code></pre></div>
+<strong>Justificación:</strong> Soporte completo para caracteres Unicode (incluyendo emojis) y ordenación correcta en español.</p>
+<h3 id="indices-recomendados">Índices Recomendados</h3>
+<p>Además de los índices automáticos en claves primarias y foráneas:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1">-- Optimización para consultas por fecha</span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_pedido_fecha</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">PEDIDO</span><span class="p">(</span><span class="n">Fecha</span><span class="p">);</span>
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="c1">-- Optimización para consultas por repartidor</span>
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_pedido_domicilio_repartidor</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">PEDIDO_DOMICILIO</span><span class="p">(</span><span class="n">Num_Repartidor</span><span class="p">);</span>
+<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a>
+<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="c1">-- Optimización para búsqueda de productos</span>
+<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_producto_nombre</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">PRODUCTO</span><span class="p">(</span><span class="n">Nombre</span><span class="p">);</span>
+</code></pre></div>
+<hr/>
+<h2 id="conclusiones-del-diseno-logico">Conclusiones del Diseño Lógico</h2>
+<p>El modelo relacional resultante:</p>
+<ol>
+<li>✅ Cumple con la <strong>Tercera Forma Normal (3FN)</strong></li>
+<li>✅ Implementa <strong>9 tablas</strong> con responsabilidades claras</li>
+<li>✅ Utiliza <strong>extensiones de tabla</strong> para jerarquía de pedidos</li>
+<li>✅ Garantiza <strong>integridad referencial</strong> completa</li>
+<li>✅ Permite <strong>escalabilidad</strong> para nuevos canales</li>
+<li>✅ Facilita <strong>consultas estadísticas</strong> y auditoría</li>
+<li>✅ Optimizado para <strong>rendimiento</strong> con InnoDB</li>
+</ol>
+<p>El diseño está listo para su implementación en MySQL/MariaDB.</p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>
