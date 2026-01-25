@@ -693,10 +693,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-ingredientes-como-texto-descriptivo" class="md-nav__link">
+  <a href="#2-normalizacion-completa-de-ingredientes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Ingredientes como Texto Descriptivo
+        2. Normalización Completa de Ingredientes
       
     </span>
   </a>
@@ -1261,10 +1261,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-ingredientes-como-texto-descriptivo" class="md-nav__link">
+  <a href="#2-normalizacion-completa-de-ingredientes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Ingredientes como Texto Descriptivo
+        2. Normalización Completa de Ingredientes
       
     </span>
   </a>
@@ -1566,13 +1566,28 @@
 - ✅ <strong>Normalización:</strong> Mantiene 3FN sin redundancia</p>
 <p><strong>Alternativa descartada:</strong> Tabla única con campos opcionales generaría múltiples NULL y violaría principios de diseño limpio.</p>
 <hr />
-<h3 id="2-ingredientes-como-texto-descriptivo">2. Ingredientes como Texto Descriptivo</h3>
-<p><strong>Decisión:</strong> Almacenar ingredientes como campo de texto libre en lugar de tabla normalizada.</p>
+<h3 id="2-normalizacion-completa-de-ingredientes">2. Normalización Completa de Ingredientes</h3>
+<p><strong>Decisión:</strong> Crear tabla dedicada <code>INGREDIENTE</code> y tabla de relación <code>PRODUCTO_INGREDIENTE</code> para normalizar completamente los ingredientes.</p>
 <p><strong>Justificación:</strong>
-- ✅ <strong>Simplicidad:</strong> No se requiere gestión de stock de ingredientes
-- ✅ <strong>Flexibilidad:</strong> Permite descripciones personalizadas para alérgenos
-- ✅ <strong>Alcance:</strong> El sistema se centra en ventas, no en producción</p>
-<p><strong>Contexto:</strong> Según acta de la segunda reunión, el cliente priorizó la facilidad de gestión de alérgenos sobre la normalización completa de ingredientes.</p>
+- ✅ <strong>Cumplimiento de 3FN:</strong> Elimina dependencias transitivas y grupos repetitivos
+- ✅ <strong>Gestión de alérgenos:</strong> Permite consultas eficientes por tipo de alérgeno (gluten, lactosa, etc.)
+- ✅ <strong>Eliminación de redundancia:</strong> Cada ingrediente se almacena una sola vez
+- ✅ <strong>Consistencia:</strong> UNIQUE en nombre evita duplicados
+- ✅ <strong>Cumplimiento normativo:</strong> Facilita reportes precisos para normativas sanitarias
+- ✅ <strong>Consultas potentes:</strong> Permite filtrar productos por ingredientes o alérgenos</p>
+<p><strong>Contexto:</strong> Según acta de la tercera reunión (21/01/2026), el Responsable de Calidad y la nutricionista plantearon la necesidad de mejorar la gestión de alérgenos para cumplir con normativas sanitarias más estrictas. Se decidió cambiar el enfoque inicial (texto libre) por normalización completa.</p>
+<p><strong>Implementación:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">-- Tabla de ingredientes</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">INGREDIENTE</span><span class="w"> </span><span class="p">(</span><span class="n">Cod_Ingrediente</span><span class="p">,</span><span class="w"> </span><span class="n">Nombre</span><span class="w"> </span><span class="k">UNIQUE</span><span class="p">,</span><span class="w"> </span><span class="n">Alergeno</span><span class="p">,</span><span class="w"> </span><span class="n">Tipo_Alergeno</span><span class="p">)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1">-- Relación N:M con productos</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">PRODUCTO_INGREDIENTE</span><span class="w"> </span><span class="p">(</span><span class="n">Cod_Producto</span><span class="p">,</span><span class="w"> </span><span class="n">Cod_Ingrediente</span><span class="p">)</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">Cod_Producto</span><span class="p">,</span><span class="w"> </span><span class="n">Cod_Ingrediente</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Ventajas sobre texto libre:</strong>
+- Consultas como "productos sin lactosa" son simples JOINs en lugar de búsquedas de texto
+- Cambiar información de un ingrediente (ej: marcar como alérgeno) afecta automáticamente a todos los productos
+- Permite estadísticas: ingredientes más usados, productos por alérgeno, etc.</p>
 <hr />
 <h3 id="3-precio-de-venta-historico">3. Precio de Venta Histórico</h3>
 <p><strong>Decisión:</strong> Almacenar <code>Precio_Venta</code> en las tablas de detalle de pedido, además del precio actual en <code>PRODUCTO</code> y <code>MENU</code>.</p>

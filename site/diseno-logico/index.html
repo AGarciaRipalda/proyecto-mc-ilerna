@@ -313,6 +313,15 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-ingrediente">
+<span class="md-ellipsis">
+      
+        Tabla: INGREDIENTE
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#tabla-producto">
 <span class="md-ellipsis">
       
@@ -353,6 +362,15 @@
 <span class="md-ellipsis">
       
         Tabla: PEDIDO_DOMICILIO
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-producto_ingrediente">
+<span class="md-ellipsis">
+      
+        Tabla: PRODUCTO_INGREDIENTE
       
     </span>
 </a>
@@ -649,6 +667,15 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-ingrediente">
+<span class="md-ellipsis">
+      
+        Tabla: INGREDIENTE
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#tabla-producto">
 <span class="md-ellipsis">
       
@@ -689,6 +716,15 @@
 <span class="md-ellipsis">
       
         Tabla: PEDIDO_DOMICILIO
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-producto_ingrediente">
+<span class="md-ellipsis">
+      
+        Tabla: PRODUCTO_INGREDIENTE
       
     </span>
 </a>
@@ -873,29 +909,33 @@
 <hr/>
 <h2 id="modelo-relacional-completo">Modelo Relacional Completo</h2>
 <h3 id="esquema-de-tablas">Esquema de Tablas</h3>
-<p>El sistema se compone de <strong>9 tablas</strong> organizadas en tres categorías:</p>
+<p>El sistema se compone de <strong>11 tablas</strong> organizadas en cuatro categorías:</p>
 <div class="mermaid">graph TD
     A[Tablas Maestras] --&gt; B[REPARTIDOR]
-    A --&gt; C[PRODUCTO]
-    A --&gt; D[MENU]
+    A --&gt; C[INGREDIENTE]
+    A --&gt; D[PRODUCTO]
+    A --&gt; E[MENU]
 
-    E[Tablas de Pedidos] --&gt; F[PEDIDO]
-    E --&gt; G[PEDIDO_VENTANILLA]
-    E --&gt; H[PEDIDO_DOMICILIO]
+    F[Tablas de Pedidos] --&gt; G[PEDIDO]
+    F --&gt; H[PEDIDO_VENTANILLA]
+    F --&gt; I[PEDIDO_DOMICILIO]
 
-    I[Tablas de Relación] --&gt; J[COMPOSICION_MENU]
-    I --&gt; K[DETALLE_PEDIDO_PRODUCTO]
-    I --&gt; L[DETALLE_PEDIDO_MENU]
+    J[Tablas de Relación] --&gt; K[PRODUCTO_INGREDIENTE]
+    J --&gt; L[COMPOSICION_MENU]
+    J --&gt; M[DETALLE_PEDIDO_PRODUCTO]
+    J --&gt; N[DETALLE_PEDIDO_MENU]
 
-    F -.extensión.-&gt; G
-    F -.extensión.-&gt; H
-    H --&gt; B
-    J --&gt; D
-    J --&gt; C
-    K --&gt; F
+    G -.extensión.-&gt; H
+    G -.extensión.-&gt; I
+    I --&gt; B
+    K --&gt; D
     K --&gt; C
-    L --&gt; F
+    L --&gt; E
     L --&gt; D
+    M --&gt; G
+    M --&gt; D
+    N --&gt; G
+    N --&gt; E
 </div>
 <hr/>
 <h2 id="diccionario-de-datos">Diccionario de Datos</h2>
@@ -967,8 +1007,53 @@
 <p><strong>Restricciones:</strong>
 - <code>CHECK (Turno IN ('M', 'T', 'N'))</code> - Solo permite valores válidos de turno</p>
 <hr/>
+<h3 id="tabla-ingrediente">Tabla: INGREDIENTE</h3>
+<p><strong>Descripción:</strong> Catálogo de ingredientes con información de alérgenos para gestión sanitaria.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Columna</th>
+<th style="text-align: left;">Tipo de Dato</th>
+<th style="text-align: left;">Restricciones</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>Cod_Ingrediente</code></td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;"><strong>PK</strong>, AUTO_INCREMENT, NOT NULL</td>
+<td style="text-align: left;">Identificador único del ingrediente</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Nombre</code></td>
+<td style="text-align: left;">VARCHAR(100)</td>
+<td style="text-align: left;"><strong>UNIQUE</strong>, NOT NULL</td>
+<td style="text-align: left;">Nombre del ingrediente (clave alternativa)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Alergeno</code></td>
+<td style="text-align: left;">BOOLEAN</td>
+<td style="text-align: left;">NOT NULL, DEFAULT FALSE</td>
+<td style="text-align: left;">Indica si es un alérgeno</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Tipo_Alergeno</code></td>
+<td style="text-align: left;">VARCHAR(50)</td>
+<td style="text-align: left;">NULL</td>
+<td style="text-align: left;">Tipo de alérgeno (Gluten, Lactosa, Frutos secos, etc.)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Claves:</strong>
+- <strong>Primaria:</strong> <code>Cod_Ingrediente</code>
+- <strong>Alternativa:</strong> <code>Nombre</code> (UNIQUE)</p>
+<p><strong>Restricciones:</strong>
+- <code>UNIQUE (Nombre)</code> - Evita duplicados de ingredientes
+- <code>DEFAULT FALSE</code> en <code>Alergeno</code> - Por defecto no es alérgeno</p>
+<hr/>
 <h3 id="tabla-producto">Tabla: PRODUCTO</h3>
-<p><strong>Descripción:</strong> Catálogo de productos individuales disponibles para la venta.</p>
+<p><strong>Descripción:</strong> Catálogo de productos individuales disponibles para la venta. Los ingredientes se gestionan mediante la tabla de relación PRODUCTO_INGREDIENTE.</p>
 <table>
 <thead>
 <tr>
@@ -992,12 +1077,6 @@
 <td style="text-align: left;">Nombre comercial del producto</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>Ingredientes</code></td>
-<td style="text-align: left;">TEXT</td>
-<td style="text-align: left;">NULL</td>
-<td style="text-align: left;">Descripción de ingredientes (gestión de alérgenos)</td>
-</tr>
-<tr>
 <td style="text-align: left;"><code>Precio</code></td>
 <td style="text-align: left;">DECIMAL(6,2)</td>
 <td style="text-align: left;">CHECK &gt; 0, NOT NULL</td>
@@ -1009,6 +1088,7 @@
 - <strong>Primaria:</strong> <code>Cod_Producto</code></p>
 <p><strong>Restricciones:</strong>
 - <code>CHECK (Precio &gt; 0)</code> - El precio debe ser positivo</p>
+<p><strong>Nota:</strong> El campo <code>Ingredientes</code> fue eliminado. Ahora se gestiona mediante normalización completa con las tablas INGREDIENTE y PRODUCTO_INGREDIENTE</p>
 <hr/>
 <h3 id="tabla-menu">Tabla: MENU</h3>
 <p><strong>Descripción:</strong> Agrupaciones comerciales de productos con precio promocional.</p>
@@ -1174,6 +1254,43 @@
 <p><strong>Cardinalidad:</strong> 
 - 1:1 con PEDIDO (extensión)
 - N:1 con REPARTIDOR (un repartidor puede entregar múltiples pedidos)</p>
+<hr/>
+<h3 id="tabla-producto_ingrediente">Tabla: PRODUCTO_INGREDIENTE</h3>
+<p><strong>Descripción:</strong> Tabla de relación N:M que define qué ingredientes componen cada producto.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Columna</th>
+<th style="text-align: left;">Tipo de Dato</th>
+<th style="text-align: left;">Restricciones</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>Cod_Producto</code></td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;"><strong>PK</strong>, <strong>FK</strong> → PRODUCTO, NOT NULL</td>
+<td style="text-align: left;">Código del producto</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Cod_Ingrediente</code></td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;"><strong>PK</strong>, <strong>FK</strong> → INGREDIENTE, NOT NULL</td>
+<td style="text-align: left;">Código del ingrediente</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Claves:</strong>
+- <strong>Primaria Compuesta:</strong> (<code>Cod_Producto</code>, <code>Cod_Ingrediente</code>)
+- <strong>Foráneas:</strong>
+  - <code>Cod_Producto</code> → <code>PRODUCTO(Cod_Producto)</code> ON DELETE CASCADE
+  - <code>Cod_Ingrediente</code> → <code>INGREDIENTE(Cod_Ingrediente)</code> ON DELETE RESTRICT</p>
+<p><strong>Cardinalidad:</strong>
+- N:M entre PRODUCTO e INGREDIENTE
+- Un producto puede tener múltiples ingredientes
+- Un ingrediente puede estar en múltiples productos</p>
+<p><strong>Ejemplo:</strong> Hamburguesa Simple contiene: Pan, Carne, Lechuga, Tomate</p>
 <hr/>
 <h3 id="tabla-composicion_menu">Tabla: COMPOSICION_MENU</h3>
 <p><strong>Descripción:</strong> Tabla de relación N:M que define qué productos componen cada menú.</p>
