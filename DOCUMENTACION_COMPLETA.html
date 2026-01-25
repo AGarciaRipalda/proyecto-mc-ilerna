@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Documentación Completa - Proyecto Mc Ilerna</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5/github-markdown.min.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Documentación Completa - Proyecto Mc Ilerna</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#documentación-completa-del-proyecto-mkdocs"
+id="toc-documentación-completa-del-proyecto-mkdocs">📘 Documentación
+Completa del Proyecto MkDocs</a>
+<ul>
+<li><a
+href="#mc-ilerna-albor-croft---sistema-de-gestión-de-base-de-datos"
+id="toc-mc-ilerna-albor-croft---sistema-de-gestión-de-base-de-datos">Mc
+Ilerna Albor Croft - Sistema de Gestión de Base de Datos</a></li>
+<li><a href="#información-del-proyecto"
+id="toc-información-del-proyecto">📋 Información del Proyecto</a></li>
+<li><a href="#enlaces-de-acceso" id="toc-enlaces-de-acceso">🔗 Enlaces
+de Acceso</a>
+<ul>
+<li><a href="#repositorio-github"
+id="toc-repositorio-github">Repositorio GitHub</a></li>
+<li><a href="#sitio-web-publicado-github-pages"
+id="toc-sitio-web-publicado-github-pages">Sitio Web Publicado (GitHub
+Pages)</a></li>
+</ul></li>
+<li><a href="#descripción-general-del-proyecto"
+id="toc-descripción-general-del-proyecto">📖 Descripción General del
+Proyecto</a>
+<ul>
+<li><a href="#objetivo-principal" id="toc-objetivo-principal">Objetivo
+Principal</a></li>
+<li><a href="#tecnología-utilizada"
+id="toc-tecnología-utilizada">Tecnología Utilizada</a></li>
+</ul></li>
+<li><a href="#estructura-del-sitio-web"
+id="toc-estructura-del-sitio-web">🗂️ Estructura del Sitio Web</a>
+<ul>
+<li><a href="#inicio-index.md" id="toc-inicio-index.md">1️⃣ Inicio
+(<code>index.md</code>)</a></li>
+<li><a href="#requerimientos-requerimientos.md"
+id="toc-requerimientos-requerimientos.md">2️⃣ Requerimientos
+(<code>requerimientos.md</code>)</a></li>
+<li><a href="#análisis-analisis.md" id="toc-análisis-analisis.md">3️⃣
+Análisis (<code>analisis.md</code>)</a></li>
+<li><a href="#diseño-entidad-relación-diseno-er.md"
+id="toc-diseño-entidad-relación-diseno-er.md">4️⃣ Diseño Entidad-Relación
+(<code>diseno-er.md</code>)</a></li>
+<li><a href="#diseño-lógico-diseno-logico.md"
+id="toc-diseño-lógico-diseno-logico.md">5️⃣ Diseño Lógico
+(<code>diseno-logico.md</code>)</a></li>
+<li><a href="#script-sql-implementacionscript-sql.md"
+id="toc-script-sql-implementacionscript-sql.md">6️⃣ Script SQL
+(<code>implementacion/script-sql.md</code>)</a></li>
+<li><a href="#pruebas-y-validación-implementacionpruebas.md"
+id="toc-pruebas-y-validación-implementacionpruebas.md">7️⃣ Pruebas y
+Validación (<code>implementacion/pruebas.md</code>)</a></li>
+<li><a href="#seguridad-seguridad.md" id="toc-seguridad-seguridad.md">8️⃣
+Seguridad (<code>seguridad.md</code>)</a></li>
+</ul></li>
+<li><a href="#extensiones-de-mkdocs-configuradas"
+id="toc-extensiones-de-mkdocs-configuradas">🛠️ Extensiones de MkDocs
+Configuradas</a>
+<ul>
+<li><a href="#pymdownx.highlight" id="toc-pymdownx.highlight">1.
+<code>pymdownx.highlight</code></a></li>
+<li><a href="#pymdownx.inlinehilite" id="toc-pymdownx.inlinehilite">2.
+<code>pymdownx.inlinehilite</code></a></li>
+<li><a href="#pymdownx.snippets" id="toc-pymdownx.snippets">3.
+<code>pymdownx.snippets</code></a></li>
+<li><a href="#pymdownx.superfences" id="toc-pymdownx.superfences">4.
+<code>pymdownx.superfences</code></a></li>
+<li><a href="#tables" id="toc-tables">5. <code>tables</code></a></li>
+</ul></li>
+<li><a href="#plugins-utilizados" id="toc-plugins-utilizados">🔌 Plugins
+Utilizados</a>
+<ul>
+<li><a href="#plugin-search" id="toc-plugin-search">1. Plugin
+<code>search</code></a></li>
+<li><a href="#plugin-mermaid2" id="toc-plugin-mermaid2">2. Plugin
+<code>mermaid2</code></a></li>
+</ul></li>
+<li><a href="#bloques-especiales-admonitions"
+id="toc-bloques-especiales-admonitions">📦 Bloques Especiales
+(Admonitions)</a>
+<ul>
+<li><a href="#tipos-de-admonitions-utilizados"
+id="toc-tipos-de-admonitions-utilizados">Tipos de Admonitions
+Utilizados</a></li>
+</ul></li>
+<li><a href="#personalización-del-tema-material"
+id="toc-personalización-del-tema-material">🎨 Personalización del Tema
+Material</a>
+<ul>
+<li><a href="#configuración-completa"
+id="toc-configuración-completa">Configuración Completa</a></li>
+<li><a href="#desglose-de-la-configuración"
+id="toc-desglose-de-la-configuración">Desglose de la
+Configuración</a></li>
+</ul></li>
+<li><a href="#estadísticas-del-proyecto"
+id="toc-estadísticas-del-proyecto">📊 Estadísticas del Proyecto</a>
+<ul>
+<li><a href="#métricas-de-contenido"
+id="toc-métricas-de-contenido">Métricas de Contenido</a></li>
+<li><a href="#distribución-de-contenido-por-página"
+id="toc-distribución-de-contenido-por-página">Distribución de Contenido
+por Página</a></li>
+</ul></li>
+<li><a href="#navegación-del-sitio" id="toc-navegación-del-sitio">🗺️
+Navegación del Sitio</a>
+<ul>
+<li><a href="#estructura-jerárquica"
+id="toc-estructura-jerárquica">Estructura Jerárquica</a></li>
+<li><a href="#explicación-de-la-estructura"
+id="toc-explicación-de-la-estructura">Explicación de la
+Estructura</a></li>
+</ul></li>
+<li><a href="#elementos-de-markdown-utilizados"
+id="toc-elementos-de-markdown-utilizados">📝 Elementos de Markdown
+Utilizados</a>
+<ul>
+<li><a href="#títulos-y-subtítulos" id="toc-títulos-y-subtítulos">1.
+Títulos y Subtítulos</a></li>
+<li><a href="#listas" id="toc-listas">2. Listas</a></li>
+<li><a href="#enlaces" id="toc-enlaces">3. Enlaces</a></li>
+<li><a href="#imágenes" id="toc-imágenes">4. Imágenes</a></li>
+<li><a href="#bloques-de-código" id="toc-bloques-de-código">5. Bloques
+de Código</a></li>
+<li><a href="#tablas" id="toc-tablas">6. Tablas</a></li>
+</ul></li>
+<li><a href="#proceso-de-desarrollo" id="toc-proceso-de-desarrollo">🚀
+Proceso de Desarrollo</a>
+<ul>
+<li><a href="#fase-1-análisis-de-requisitos-2-días"
+id="toc-fase-1-análisis-de-requisitos-2-días">Fase 1: Análisis de
+Requisitos (2 días)</a></li>
+<li><a href="#fase-2-diseño-conceptual-1-día"
+id="toc-fase-2-diseño-conceptual-1-día">Fase 2: Diseño Conceptual (1
+día)</a></li>
+<li><a href="#fase-3-diseño-lógico-1-día"
+id="toc-fase-3-diseño-lógico-1-día">Fase 3: Diseño Lógico (1
+día)</a></li>
+<li><a href="#fase-4-implementación-2-días"
+id="toc-fase-4-implementación-2-días">Fase 4: Implementación (2
+días)</a></li>
+<li><a href="#fase-5-documentación-2-días"
+id="toc-fase-5-documentación-2-días">Fase 5: Documentación (2
+días)</a></li>
+<li><a href="#fase-6-despliegue-1-día"
+id="toc-fase-6-despliegue-1-día">Fase 6: Despliegue (1 día)</a></li>
+</ul></li>
+<li><a href="#cumplimiento-de-requisitos"
+id="toc-cumplimiento-de-requisitos">✅ Cumplimiento de Requisitos</a>
+<ul>
+<li><a href="#requisitos-obligatorios"
+id="toc-requisitos-obligatorios">Requisitos Obligatorios</a></li>
+<li><a href="#extras-implementados-1-punto"
+id="toc-extras-implementados-1-punto">Extras Implementados (+1
+punto)</a></li>
+</ul></li>
+<li><a href="#puntos-fuertes-del-proyecto"
+id="toc-puntos-fuertes-del-proyecto">🎯 Puntos Fuertes del Proyecto</a>
+<ul>
+<li><a href="#completitud" id="toc-completitud">1. Completitud</a></li>
+<li><a href="#profesionalidad" id="toc-profesionalidad">2.
+Profesionalidad</a></li>
+<li><a href="#usabilidad" id="toc-usabilidad">3. Usabilidad</a></li>
+<li><a href="#estética" id="toc-estética">4. Estética</a></li>
+<li><a href="#técnica" id="toc-técnica">5. Técnica</a></li>
+</ul></li>
+<li><a href="#recursos-adicionales" id="toc-recursos-adicionales">📚
+Recursos Adicionales</a>
+<ul>
+<li><a href="#documentación-de-referencia"
+id="toc-documentación-de-referencia">Documentación de
+Referencia</a></li>
+<li><a href="#comandos-útiles" id="toc-comandos-útiles">Comandos
+Útiles</a></li>
+</ul></li>
+<li><a href="#conclusión" id="toc-conclusión">🏆 Conclusión</a>
+<ul>
+<li><a href="#logros-principales" id="toc-logros-principales">Logros
+Principales</a></li>
+<li><a href="#valor-educativo" id="toc-valor-educativo">Valor
+Educativo</a></li>
+</ul></li>
+<li><a href="#contacto-y-enlaces" id="toc-contacto-y-enlaces">📞
+Contacto y Enlaces</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="documentación-completa-del-proyecto-mkdocs">📘 Documentación
+Completa del Proyecto MkDocs</h1>
+<h2 id="mc-ilerna-albor-croft---sistema-de-gestión-de-base-de-datos">Mc
+Ilerna Albor Croft - Sistema de Gestión de Base de Datos</h2>
+<hr />
+<h2 id="información-del-proyecto">📋 Información del Proyecto</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Campo</th>
+<th style="text-align: left;">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Alumno</strong></td>
+<td style="text-align: left;">Alejandro García Ripalda</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Módulo</strong></td>
+<td style="text-align: left;">Administración de Sistemas Gestores de
+Bases de Datos (ASGBD)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ciclo Formativo</strong></td>
+<td style="text-align: left;">Administración de Sistemas Informáticos en
+Red (ASIR)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Centro Educativo</strong></td>
+<td style="text-align: left;">Albor Croft - Jerez de la Frontera</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Fecha de Entrega</strong></td>
+<td style="text-align: left;">16 de enero de 2026</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tema del Proyecto</strong></td>
+<td style="text-align: left;">Base de Datos para Restaurante de Comida
+Rápida</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="enlaces-de-acceso">🔗 Enlaces de Acceso</h2>
+<h3 id="repositorio-github">Repositorio GitHub</h3>
+<pre><code>https://github.com/AGarciaRipalda/proyecto-mc-ilerna</code></pre>
+<h3 id="sitio-web-publicado-github-pages">Sitio Web Publicado (GitHub
+Pages)</h3>
+<pre><code>https://AGarciaRipalda.github.io/proyecto-mc-ilerna/</code></pre>
+<hr />
+<h2 id="descripción-general-del-proyecto">📖 Descripción General del
+Proyecto</h2>
+<p>Este proyecto consiste en la <strong>documentación técnica
+completa</strong> de un sistema de gestión de base de datos diseñado
+para el restaurante de comida rápida <strong>“Mc Ilerna Albor
+Croft”</strong>, ubicado en Jerez de la Frontera.</p>
+<h3 id="objetivo-principal">Objetivo Principal</h3>
+<p>Crear una base de datos relacional que permita gestionar
+eficientemente: - Pedidos en ventanilla - Pedidos a domicilio -
+Productos y menús - Repartidores - Estadísticas operativas</p>
+<h3 id="tecnología-utilizada">Tecnología Utilizada</h3>
+<ul>
+<li><strong>MkDocs</strong>: Generador de sitios estáticos para
+documentación</li>
+<li><strong>Material Theme</strong>: Tema moderno y responsive</li>
+<li><strong>GitHub Pages</strong>: Hosting gratuito del sitio web</li>
+<li><strong>Git/GitHub</strong>: Control de versiones</li>
+</ul>
+<hr />
+<h2 id="estructura-del-sitio-web">🗂️ Estructura del Sitio Web</h2>
+<p>El sitio web está organizado en <strong>8 páginas
+principales</strong>, cada una con un propósito específico:</p>
+<h3 id="inicio-index.md">1️⃣ Inicio (<code>index.md</code>)</h3>
+<p><strong>Contenido:</strong> - Presentación del proyecto -
+Contextualización empresarial del restaurante - Datos del
+establecimiento Mc Ilerna Albor Croft - Introducción al módulo ASGBD</p>
+<p><strong>Elementos destacados:</strong> - Bloque informativo con datos
+del proyecto (admonition tipo <code>info</code>) - Descripción del
+contexto geográfico y educativo</p>
+<hr />
+<h3 id="requerimientos-requerimientos.md">2️⃣ Requerimientos
+(<code>requerimientos.md</code>)</h3>
+<p><strong>Contenido:</strong> - Actas de reuniones simuladas con el
+cliente - Definición del alcance operativo del sistema - Estructura de
+productos (individuales y menús) - Necesidades de gestión de pedidos</p>
+<p><strong>Elementos destacados:</strong> - Listas ordenadas con
+requisitos del cliente - Tablas de productos y precios</p>
+<hr />
+<h3 id="análisis-analisis.md">3️⃣ Análisis
+(<code>analisis.md</code>)</h3>
+<p><strong>Contenido:</strong> - <strong>Requisitos Funcionales</strong>
+(RF-01 a RF-06): - Gestión de pedidos en ventanilla - Gestión de pedidos
+a domicilio - Gestión de productos y menús - Asignación de repartidores
+- Registro de fechas y horas - Consultas estadísticas</p>
+<ul>
+<li><strong>Requisitos No Funcionales</strong> (RNF-01 a RNF-04):
+<ul>
+<li>Integridad referencial</li>
+<li>Rendimiento</li>
+<li>Seguridad y privacidad</li>
+<li>Escalabilidad</li>
+</ul></li>
+<li><strong>Proceso de Normalización</strong>:
+<ul>
+<li>Primera Forma Normal (1FN)</li>
+<li>Segunda Forma Normal (2FN)</li>
+<li>Tercera Forma Normal (3FN)</li>
+</ul></li>
+</ul>
+<p><strong>Elementos destacados:</strong> - Definiciones técnicas con
+admonitions - Diagramas de flujo de normalización (Mermaid) - Tablas de
+análisis de dependencias funcionales</p>
+<hr />
+<h3 id="diseño-entidad-relación-diseno-er.md">4️⃣ Diseño Entidad-Relación
+(<code>diseno-er.md</code>)</h3>
+<p><strong>Contenido:</strong> - Modelo Entidad-Relación completo -
+Descripción de todas las entidades: - REPARTIDOR - PEDIDO -
+PEDIDO_VENTANILLA - PEDIDO_DOMICILIO - PRODUCTO - MENU -
+CONTIENE_PRODUCTO - CONTIENE_MENU - COMPUESTO_POR</p>
+<p><strong>Elementos destacados:</strong> - <strong>Diagrama ER completo
+en Mermaid</strong> (118 líneas de código) - Cardinalidades y relaciones
+detalladas - Descripción de atributos principales</p>
+<hr />
+<h3 id="diseño-lógico-diseno-logico.md">5️⃣ Diseño Lógico
+(<code>diseno-logico.md</code>)</h3>
+<p><strong>Contenido:</strong> - <strong>Diccionario de Datos
+Completo</strong> para 9 tablas: 1. REPARTIDOR 2. PEDIDO 3.
+PEDIDO_VENTANILLA 4. PEDIDO_DOMICILIO 5. PRODUCTO 6. MENU 7.
+CONTIENE_PRODUCTO 8. CONTIENE_MENU 9. COMPUESTO_POR</p>
+<ul>
+<li>Modelo relacional detallado</li>
+<li>Restricciones de integridad (PK, FK, UNIQUE, CHECK)</li>
+<li>Índices de optimización</li>
+</ul>
+<p><strong>Elementos destacados:</strong> - Tablas extensas con
+columnas, tipos de datos y restricciones - Diagramas de categorización
+de tablas (Mermaid) - Diagramas de especialización (Mermaid) - Grafos de
+dependencias entre tablas (Mermaid)</p>
+<hr />
+<h3 id="script-sql-implementacionscript-sql.md">6️⃣ Script SQL
+(<code>implementacion/script-sql.md</code>)</h3>
+<p><strong>Contenido:</strong> - Código DDL (Data Definition Language)
+completo - Creación de base de datos <code>mc_ilerna_db</code> -
+Definición de todas las tablas con: - Claves primarias (PRIMARY KEY) -
+Claves foráneas (FOREIGN KEY) - Restricciones UNIQUE - Restricciones
+CHECK - Valores por defecto (DEFAULT) - Índices para optimización de
+consultas</p>
+<p><strong>Elementos destacados:</strong> - Más de 15 bloques de código
+SQL - Comentarios explicativos en el código - Sintaxis resaltada con
+numeración de líneas</p>
+<hr />
+<h3 id="pruebas-y-validación-implementacionpruebas.md">7️⃣ Pruebas y
+Validación (<code>implementacion/pruebas.md</code>)</h3>
+<p><strong>Contenido:</strong> - <strong>Datos de Prueba
+Realistas</strong>: - Inserción de repartidores - Inserción de productos
+(hamburguesas, bebidas, complementos) - Inserción de menús - Composición
+de menús - Pedidos de prueba (ventanilla y domicilio)</p>
+<ul>
+<li><strong>Casos de Uso Simulados</strong>:
+<ul>
+<li>Pedido en ventanilla con productos individuales</li>
+<li>Pedido a domicilio con menús</li>
+<li>Pedido mixto (productos + menús)</li>
+</ul></li>
+<li><strong>Validaciones de Integridad</strong>:
+<ul>
+<li>Verificación de claves foráneas</li>
+<li>Comprobación de restricciones UNIQUE</li>
+<li>Validación de restricciones CHECK</li>
+</ul></li>
+<li><strong>Consultas Estadísticas</strong>:
+<ul>
+<li>Total de pedidos por tipo</li>
+<li>Productos más vendidos</li>
+<li>Repartidores con más entregas</li>
+<li>Ingresos por período</li>
+</ul></li>
+</ul>
+<p><strong>Elementos destacados:</strong> - Más de 20 bloques de código
+SQL - Resultados esperados de las consultas - Tablas de verificación</p>
+<hr />
+<h3 id="seguridad-seguridad.md">8️⃣ Seguridad
+(<code>seguridad.md</code>)</h3>
+<p><strong>Contenido:</strong> - <strong>Estrategia de Backups</strong>:
+- Backups completos semanales - Backups incrementales diarios - Scripts
+Bash automatizados - Procedimientos de restauración</p>
+<ul>
+<li><strong>Cumplimiento RGPD</strong>:
+<ul>
+<li>Artículos aplicables (Art. 5, 6, 15, 17, 32)</li>
+<li>Medidas de protección de datos personales</li>
+<li>Derechos de los interesados</li>
+<li>Seguridad del tratamiento</li>
+</ul></li>
+<li><strong>Gestión de Usuarios y Permisos</strong>:
+<ul>
+<li>Roles de usuario (administrador, operador, consulta)</li>
+<li>Permisos granulares (SELECT, INSERT, UPDATE, DELETE)</li>
+<li>Principio de mínimo privilegio</li>
+</ul></li>
+<li><strong>Optimización y Rendimiento</strong>:
+<ul>
+<li>Índices estratégicos</li>
+<li>Análisis de consultas con EXPLAIN</li>
+<li>Monitorización de rendimiento</li>
+</ul></li>
+</ul>
+<p><strong>Elementos destacados:</strong> - Scripts Bash para backups
+automatizados - Código SQL para gestión de usuarios - Admonitions con
+artículos del RGPD - Tablas de comparación de estrategias</p>
+<hr />
+<h2 id="extensiones-de-mkdocs-configuradas">🛠️ Extensiones de MkDocs
+Configuradas</h2>
+<h3 id="pymdownx.highlight">1. <code>pymdownx.highlight</code></h3>
+<p><strong>Función:</strong> Resaltado de sintaxis en bloques de
+código</p>
+<p><strong>Características:</strong> - Numeración de líneas automática -
+Soporte para múltiples lenguajes (SQL, Bash, Python, YAML) - Anclas para
+referencias a líneas específicas</p>
+<p><strong>Configuración:</strong></p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">pymdownx.highlight</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">anchor_linenums</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
+<p><strong>Uso en el proyecto:</strong> - Todos los bloques de código
+SQL tienen sintaxis resaltada - Scripts Bash con colores diferenciados -
+Código Python con identificación de palabras clave</p>
+<hr />
+<h3 id="pymdownx.inlinehilite">2.
+<code>pymdownx.inlinehilite</code></h3>
+<p><strong>Función:</strong> Resaltado de código inline (dentro de
+párrafos)</p>
+<p><strong>Características:</strong> - Permite usar backticks con
+especificación de lenguaje - Mantiene la legibilidad del texto</p>
+<p><strong>Ejemplo de uso:</strong></p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>La tabla <span class="in">`REPARTIDOR`</span> contiene el campo <span class="in">`:::sql DNI VARCHAR(9)`</span>.</span></code></pre></div>
+<hr />
+<h3 id="pymdownx.snippets">3. <code>pymdownx.snippets</code></h3>
+<p><strong>Función:</strong> Inclusión de fragmentos de código
+externos</p>
+<p><strong>Características:</strong> - Permite reutilizar código en
+múltiples páginas - Facilita el mantenimiento de ejemplos</p>
+<p><strong>Uso potencial:</strong> - Fragmentos SQL reutilizables -
+Ejemplos de consultas comunes</p>
+<hr />
+<h3 id="pymdownx.superfences">4. <code>pymdownx.superfences</code></h3>
+<p><strong>Función:</strong> Bloques de código avanzados y anidados</p>
+<p><strong>Características:</strong> - Soporte para bloques de código
+dentro de listas - Integración con diagramas Mermaid - Bloques de código
+personalizados</p>
+<p><strong>Configuración:</strong></p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">pymdownx.superfences</span><span class="kw">:</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">custom_fences</span><span class="kw">:</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> mermaid</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">class</span><span class="kw">:</span><span class="at"> mermaid</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">format</span><span class="kw">:</span><span class="at"> </span><span class="ot">!!python/name:mermaid2.fence_mermaid</span></span></code></pre></div>
+<p><strong>Uso en el proyecto:</strong> - Todos los diagramas Mermaid
+utilizan esta extensión - Bloques de código anidados en listas de
+pasos</p>
+<hr />
+<h3 id="tables">5. <code>tables</code></h3>
+<p><strong>Función:</strong> Tablas Markdown con formato avanzado</p>
+<p><strong>Características:</strong> - Alineación personalizada
+(izquierda, centro, derecha) - Soporte para contenido complejo en celdas
+- Formato responsive</p>
+<p><strong>Ejemplo de uso:</strong></p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Columna Izquierda <span class="pp">|</span> Columna Centrada <span class="pp">|</span> Columna Derecha <span class="pp">|</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|:------------------|:----------------:|----------------:|</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Texto             <span class="pp">|</span> Texto            <span class="pp">|</span> Número          <span class="pp">|</span></span></code></pre></div>
+<p><strong>Uso en el proyecto:</strong> - Diccionario de datos (25+
+tablas) - Tablas de requisitos funcionales - Tablas de comparación de
+estrategias</p>
+<hr />
+<h2 id="plugins-utilizados">🔌 Plugins Utilizados</h2>
+<h3 id="plugin-search">1. Plugin <code>search</code></h3>
+<p><strong>Función:</strong> Buscador integrado en el sitio web</p>
+<p><strong>Características:</strong> - Búsqueda en tiempo real -
+Indexación automática de todo el contenido - Interfaz en español -
+Resultados destacados</p>
+<p><strong>Configuración:</strong></p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plugins</span><span class="kw">:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> search</span></span></code></pre></div>
+<p><strong>Beneficios:</strong> - Navegación rápida por la documentación
+- Búsqueda de términos técnicos específicos - Mejora la experiencia de
+usuario</p>
+<hr />
+<h3 id="plugin-mermaid2">2. Plugin <code>mermaid2</code></h3>
+<p><strong>Función:</strong> Renderizado de diagramas técnicos</p>
+<p><strong>Características:</strong> - Diagramas Entidad-Relación (ER) -
+Diagramas de flujo - Grafos de dependencias - Diagramas de clases</p>
+<p><strong>Configuración:</strong></p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plugins</span><span class="kw">:</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> mermaid2</span></span></code></pre></div>
+<p><strong>Diagramas incluidos en el proyecto:</strong></p>
+<ol type="1">
+<li><strong>Diagrama ER Completo</strong> (<code>diseno-er.md</code>)
+<ul>
+<li>118 líneas de código Mermaid</li>
+<li>Todas las entidades y relaciones</li>
+<li>Cardinalidades especificadas</li>
+</ul></li>
+<li><strong>Diagrama de Categorías de Tablas</strong>
+(<code>diseno-logico.md</code>)
+<ul>
+<li>Clasificación de tablas por función</li>
+<li>Tablas maestras vs. tablas de relación</li>
+</ul></li>
+<li><strong>Diagrama de Especialización</strong>
+(<code>diseno-logico.md</code>)
+<ul>
+<li>Herencia entre PEDIDO, PEDIDO_VENTANILLA y PEDIDO_DOMICILIO</li>
+</ul></li>
+<li><strong>Diagrama de Dependencias</strong>
+(<code>diseno-logico.md</code>)
+<ul>
+<li>Grafo de relaciones entre tablas</li>
+<li>Flujo de claves foráneas</li>
+</ul></li>
+<li><strong>Grafo de Normalización</strong> (<code>analisis.md</code>)
+<ul>
+<li>Proceso de normalización visual</li>
+<li>Transiciones entre formas normales</li>
+</ul></li>
+</ol>
+<hr />
+<h2 id="bloques-especiales-admonitions">📦 Bloques Especiales
+(Admonitions)</h2>
+<p>Los <strong>admonitions</strong> son bloques destacados que llaman la
+atención sobre información importante.</p>
+<h3 id="tipos-de-admonitions-utilizados">Tipos de Admonitions
+Utilizados</h3>
+<h4 id="info---información">1. <code>!!! info</code> - Información</h4>
+<p><strong>Uso:</strong> Datos contextuales, información de fondo</p>
+<p><strong>Ejemplo en el proyecto:</strong></p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>!!! info &quot;Datos del Proyecto&quot;</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    **Establecimiento:** Mc Ilerna Albor Croft</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    **Ubicación:** Jerez de la Frontera</span></code></pre></div>
+<p><strong>Ubicación:</strong> <code>index.md</code></p>
+<hr />
+<h4 id="note---notas-técnicas">2. <code>!!! note</code> - Notas
+Técnicas</h4>
+<p><strong>Uso:</strong> Comentarios adicionales, aclaraciones</p>
+<p><strong>Ejemplo en el proyecto:</strong></p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>!!! note &quot;Primera Forma Normal (1FN)&quot;</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    Una tabla está en 1FN si todos sus atributos contienen valores atómicos.</span></code></pre></div>
+<p><strong>Ubicación:</strong> <code>analisis.md</code></p>
+<hr />
+<h4 id="warning---advertencias">3. <code>!!! warning</code> -
+Advertencias</h4>
+<p><strong>Uso:</strong> Restricciones, limitaciones, precauciones</p>
+<p><strong>Ejemplo en el proyecto:</strong></p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>!!! warning &quot;Restricción de Integridad&quot;</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    El DNI del repartidor debe ser único en el sistema.</span></code></pre></div>
+<p><strong>Ubicación:</strong> <code>diseno-logico.md</code></p>
+<hr />
+<h4 id="tip---consejos">4. <code>!!! tip</code> - Consejos</h4>
+<p><strong>Uso:</strong> Mejores prácticas, recomendaciones</p>
+<p><strong>Ejemplo potencial:</strong></p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>!!! tip &quot;Optimización&quot;</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    Crear índices en columnas frecuentemente consultadas.</span></code></pre></div>
+<hr />
+<h4 id="danger---peligro">5. <code>!!! danger</code> - Peligro</h4>
+<p><strong>Uso:</strong> Operaciones críticas, riesgos de seguridad</p>
+<p><strong>Ejemplo en el proyecto:</strong></p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>!!! danger &quot;RGPD - Artículo 32&quot;</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    Implementar medidas técnicas apropiadas para garantizar la seguridad.</span></code></pre></div>
+<p><strong>Ubicación:</strong> <code>seguridad.md</code></p>
+<hr />
+<h2 id="personalización-del-tema-material">🎨 Personalización del Tema
+Material</h2>
+<h3 id="configuración-completa">Configuración Completa</h3>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span><span class="kw">:</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> material</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">language</span><span class="kw">:</span><span class="at"> es</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">palette</span><span class="kw">:</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">scheme</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">primary</span><span class="kw">:</span><span class="at"> red</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">accent</span><span class="kw">:</span><span class="at"> red</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">scheme</span><span class="kw">:</span><span class="at"> slate</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">primary</span><span class="kw">:</span><span class="at"> red</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">accent</span><span class="kw">:</span><span class="at"> red</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">features</span><span class="kw">:</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> navigation.tabs</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> navigation.sections</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> content.code.copy</span></span></code></pre></div>
+<h3 id="desglose-de-la-configuración">Desglose de la Configuración</h3>
+<h4 id="idioma-language-es">1. <strong>Idioma
+(<code>language: es</code>)</strong></h4>
+<ul>
+<li>Interfaz completamente en español</li>
+<li>Traducciones automáticas de elementos UI</li>
+<li>Mensajes de búsqueda en español</li>
+</ul>
+<h4 id="paleta-de-colores">2. <strong>Paleta de Colores</strong></h4>
+<p><strong>Modo Claro (<code>scheme: default</code>):</strong> - Color
+primario: Rojo (identidad corporativa) - Color de acento: Rojo - Fondo:
+Blanco</p>
+<p><strong>Modo Oscuro (<code>scheme: slate</code>):</strong> - Color
+primario: Rojo - Color de acento: Rojo - Fondo: Gris oscuro -
+Alternancia automática según preferencias del navegador</p>
+<h4 id="características-de-navegación">3. <strong>Características de
+Navegación</strong></h4>
+<p><strong><code>navigation.tabs</code>:</strong> - Pestañas en la parte
+superior - Organización visual de secciones principales - Navegación
+intuitiva</p>
+<p><strong><code>navigation.sections</code>:</strong> - Secciones
+expandibles en el menú lateral - Jerarquía clara de contenidos -
+Subsecciones visibles</p>
+<p><strong><code>content.code.copy</code>:</strong> - Botón “Copiar” en
+todos los bloques de código - Mejora la experiencia de usuario -
+Facilita la reutilización de código</p>
+<hr />
+<h2 id="estadísticas-del-proyecto">📊 Estadísticas del Proyecto</h2>
+<h3 id="métricas-de-contenido">Métricas de Contenido</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Métrica</th>
+<th style="text-align: center;">Cantidad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Total de páginas</strong></td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Líneas de
+documentación</strong></td>
+<td style="text-align: center;">~1,800</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Diagramas Mermaid</strong></td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tablas</strong></td>
+<td style="text-align: center;">25+</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Bloques de código</strong></td>
+<td style="text-align: center;">40+</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Admonitions</strong></td>
+<td style="text-align: center;">10+</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Lenguajes de código</strong></td>
+<td style="text-align: center;">4 (SQL, Bash, Python, YAML)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="distribución-de-contenido-por-página">Distribución de Contenido
+por Página</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Página</th>
+<th style="text-align: center;">Líneas</th>
+<th style="text-align: center;">Tablas</th>
+<th style="text-align: center;">Diagramas</th>
+<th style="text-align: center;">Bloques Código</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>index.md</code></td>
+<td style="text-align: center;">19</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>requerimientos.md</code></td>
+<td style="text-align: center;">~50</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>analisis.md</code></td>
+<td style="text-align: center;">~300</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>diseno-er.md</code></td>
+<td style="text-align: center;">~120</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>diseno-logico.md</code></td>
+<td style="text-align: center;">~400</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>script-sql.md</code></td>
+<td style="text-align: center;">~400</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">15</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>pruebas.md</code></td>
+<td style="text-align: center;">~500</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">20</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>seguridad.md</code></td>
+<td style="text-align: center;">~450</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">5</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="navegación-del-sitio">🗺️ Navegación del Sitio</h2>
+<h3 id="estructura-jerárquica">Estructura Jerárquica</h3>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nav</span><span class="kw">:</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Inicio</span><span class="kw">:</span><span class="at"> index.md</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Requerimientos</span><span class="kw">:</span><span class="at"> requerimientos.md</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Análisis</span><span class="kw">:</span><span class="at"> analisis.md</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Diseño</span><span class="kw">:</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">Modelo Entidad-Relación</span><span class="kw">:</span><span class="at"> diseno-er.md</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">Diseño Lógico</span><span class="kw">:</span><span class="at"> diseno-logico.md</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Implementación</span><span class="kw">:</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">Script SQL</span><span class="kw">:</span><span class="at"> implementacion/script-sql.md</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">Pruebas y Validación</span><span class="kw">:</span><span class="at"> implementacion/pruebas.md</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Seguridad</span><span class="kw">:</span><span class="at"> seguridad.md</span></span></code></pre></div>
+<h3 id="explicación-de-la-estructura">Explicación de la Estructura</h3>
+<p><strong>Nivel 1 - Páginas Principales:</strong> - Inicio -
+Requerimientos - Análisis - Seguridad</p>
+<p><strong>Nivel 2 - Secciones con Subsecciones:</strong></p>
+<p><strong>Diseño:</strong> - Modelo Entidad-Relación - Diseño
+Lógico</p>
+<p><strong>Implementación:</strong> - Script SQL - Pruebas y
+Validación</p>
+<p>Esta estructura permite: - Navegación lógica del proceso de
+desarrollo - Agrupación de contenidos relacionados - Fácil localización
+de información específica</p>
+<hr />
+<h2 id="elementos-de-markdown-utilizados">📝 Elementos de Markdown
+Utilizados</h2>
+<h3 id="títulos-y-subtítulos">1. Títulos y Subtítulos</h3>
+<p><strong>Niveles utilizados:</strong> H1 (<code>#</code>) a H6
+(<code>######</code>)</p>
+<p><strong>Ejemplo de jerarquía:</strong></p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Título Principal (H1)</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sección (H2)</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">### Subsección (H3)</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Detalle (H4)</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Subdetalle (H5)</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">###### Nota (H6)</span></span></code></pre></div>
+<p><strong>Uso en el proyecto:</strong> - H1: Título de cada página -
+H2: Secciones principales - H3: Subsecciones - H4-H6: Detalles y notas
+específicas</p>
+<hr />
+<h3 id="listas">2. Listas</h3>
+<h4 id="listas-ordenadas">Listas Ordenadas</h4>
+<p><strong>Uso:</strong> Pasos de procedimientos, secuencias</p>
+<p><strong>Ejemplo:</strong></p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Crear base de datos</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Crear tablas</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Insertar datos de prueba</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Ejecutar consultas</span></code></pre></div>
+<h4 id="listas-no-ordenadas">Listas No Ordenadas</h4>
+<p><strong>Uso:</strong> Características, requisitos</p>
+<p><strong>Ejemplo:</strong></p>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Integridad referencial</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Rendimiento optimizado</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Seguridad robusta</span></code></pre></div>
+<h4 id="listas-anidadas">Listas Anidadas</h4>
+<p><strong>Uso:</strong> Estructuras jerárquicas</p>
+<p><strong>Ejemplo:</strong></p>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Requisitos Funcionales</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>RF-01: Gestión de pedidos</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>Pedidos en ventanilla</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>Pedidos a domicilio</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>RF-02: Gestión de productos</span></code></pre></div>
+<hr />
+<h3 id="enlaces">3. Enlaces</h3>
+<h4 id="enlaces-internos">Enlaces Internos</h4>
+<p><strong>Uso:</strong> Navegación entre páginas</p>
+<p><strong>Ejemplo:</strong></p>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>Ver <span class="co">[</span><span class="ot">Script SQL</span><span class="co">](implementacion/script-sql.md)</span> para más detalles.</span></code></pre></div>
+<h4 id="enlaces-a-secciones">Enlaces a Secciones</h4>
+<p><strong>Uso:</strong> Referencias dentro de la misma página</p>
+<p><strong>Ejemplo:</strong></p>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>Consultar <span class="co">[</span><span class="ot">Requisitos Funcionales</span><span class="co">](#requisitos-funcionales)</span></span></code></pre></div>
+<h4 id="enlaces-externos">Enlaces Externos</h4>
+<p><strong>Uso:</strong> Referencias a recursos externos</p>
+<p><strong>Ejemplo:</strong></p>
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Documentación de MkDocs</span><span class="co">](https://www.mkdocs.org/)</span></span></code></pre></div>
+<hr />
+<h3 id="imágenes">4. Imágenes</h3>
+<p><strong>Sintaxis:</strong></p>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Descripción de la imagen](ruta/imagen.png)</span></span></code></pre></div>
+<p><strong>Uso en el proyecto:</strong> - Diagramas técnicos
+(renderizados por Mermaid) - Capturas de pantalla (potencial)</p>
+<hr />
+<h3 id="bloques-de-código">5. Bloques de Código</h3>
+<h4 id="código-sql">Código SQL</h4>
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> REPARTIDOR (</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    Num_Repartidor <span class="dt">INT</span> AUTO_INCREMENT,</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    Nombre <span class="dt">VARCHAR</span>(<span class="dv">50</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    DNI <span class="dt">VARCHAR</span>(<span class="dv">9</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">CONSTRAINT</span> PK_Repartidor <span class="kw">PRIMARY</span> <span class="kw">KEY</span> (Num_Repartidor)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>);</span></code></pre></div>
+<h4 id="código-bash">Código Bash</h4>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="ex">mysqldump</span> <span class="at">-u</span> root <span class="at">-p</span> mc_ilerna_db <span class="op">&gt;</span> backup_<span class="va">$(</span><span class="fu">date</span> +%Y%m%d<span class="va">)</span>.sql</span></code></pre></div>
+<h4 id="código-python">Código Python</h4>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calcular_total_pedido(productos, menús):</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> <span class="bu">sum</span>(p.precio <span class="cf">for</span> p <span class="kw">in</span> productos)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    total <span class="op">+=</span> <span class="bu">sum</span>(m.precio <span class="cf">for</span> m <span class="kw">in</span> menús)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total</span></code></pre></div>
+<h4 id="código-yaml">Código YAML</h4>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span><span class="kw">:</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> material</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">language</span><span class="kw">:</span><span class="at"> es</span></span></code></pre></div>
+<hr />
+<h3 id="tablas">6. Tablas</h3>
+<h4 id="tabla-simple">Tabla Simple</h4>
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Columna 1 <span class="pp">|</span> Columna 2 <span class="pp">|</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|:----------|:----------|</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Valor A   <span class="pp">|</span> Valor B   <span class="pp">|</span></span></code></pre></div>
+<h4 id="tabla-con-alineación">Tabla con Alineación</h4>
+<div class="sourceCode" id="cb29"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Izquierda <span class="pp">|</span> Centro <span class="pp">|</span> Derecha <span class="pp">|</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|:----------|:------:|--------:|</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Texto     <span class="pp">|</span> Texto  <span class="pp">|</span> 100     <span class="pp">|</span></span></code></pre></div>
+<h4 id="tabla-compleja-diccionario-de-datos">Tabla Compleja (Diccionario
+de Datos)</h4>
+<div class="sourceCode" id="cb30"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Columna <span class="pp">|</span> Tipo <span class="pp">|</span> Restricciones <span class="pp">|</span> Descripción <span class="pp">|</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|:--------|:-----|:--------------|:------------|</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`Num_Repartidor`</span> <span class="pp">|</span> INT <span class="pp">|</span> **PK**, AUTO_INCREMENT <span class="pp">|</span> Identificador único <span class="pp">|</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`Nombre`</span> <span class="pp">|</span> VARCHAR(50) <span class="pp">|</span> NOT NULL <span class="pp">|</span> Nombre del repartidor <span class="pp">|</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`DNI`</span> <span class="pp">|</span> VARCHAR(9) <span class="pp">|</span> **UK**, NOT NULL <span class="pp">|</span> Documento de identidad <span class="pp">|</span></span></code></pre></div>
+<hr />
+<h2 id="proceso-de-desarrollo">🚀 Proceso de Desarrollo</h2>
+<h3 id="fase-1-análisis-de-requisitos-2-días">Fase 1: Análisis de
+Requisitos (2 días)</h3>
+<p><strong>Actividades:</strong> - Simulación de reuniones con el
+cliente - Identificación de necesidades operativas - Definición del
+alcance del sistema - Identificación de entidades principales</p>
+<p><strong>Entregables:</strong> - <code>requerimientos.md</code> -
+Actas de reuniones - Lista de requisitos funcionales y no
+funcionales</p>
+<hr />
+<h3 id="fase-2-diseño-conceptual-1-día">Fase 2: Diseño Conceptual (1
+día)</h3>
+<p><strong>Actividades:</strong> - Creación del modelo Entidad-Relación
+- Identificación de atributos y relaciones - Definición de
+cardinalidades - Proceso de normalización (1FN, 2FN, 3FN)</p>
+<p><strong>Entregables:</strong> - <code>analisis.md</code> -
+<code>diseno-er.md</code> - Diagrama ER en Mermaid</p>
+<hr />
+<h3 id="fase-3-diseño-lógico-1-día">Fase 3: Diseño Lógico (1 día)</h3>
+<p><strong>Actividades:</strong> - Transformación del modelo ER a modelo
+relacional - Creación del diccionario de datos - Definición de
+restricciones de integridad - Identificación de índices necesarios</p>
+<p><strong>Entregables:</strong> - <code>diseno-logico.md</code> -
+Diccionario de datos completo (9 tablas) - Diagramas de dependencias</p>
+<hr />
+<h3 id="fase-4-implementación-2-días">Fase 4: Implementación (2
+días)</h3>
+<p><strong>Actividades:</strong> - Escritura de scripts SQL DDL -
+Creación de base de datos y tablas - Inserción de datos de prueba -
+Ejecución de consultas de validación</p>
+<p><strong>Entregables:</strong> -
+<code>implementacion/script-sql.md</code> -
+<code>implementacion/pruebas.md</code> - Scripts SQL ejecutables</p>
+<hr />
+<h3 id="fase-5-documentación-2-días">Fase 5: Documentación (2 días)</h3>
+<p><strong>Actividades:</strong> - Configuración de MkDocs - Redacción
+de contenidos técnicos - Creación de diagramas Mermaid - Personalización
+del tema Material - Revisión y corrección</p>
+<p><strong>Entregables:</strong> - Sitio web completo -
+<code>mkdocs.yml</code> configurado - Todas las páginas de
+documentación</p>
+<hr />
+<h3 id="fase-6-despliegue-1-día">Fase 6: Despliegue (1 día)</h3>
+<p><strong>Actividades:</strong> - Inicialización de repositorio Git -
+Creación de repositorio en GitHub - Configuración de GitHub Pages -
+Despliegue con <code>mkdocs gh-deploy</code> - Verificación del sitio
+publicado</p>
+<p><strong>Entregables:</strong> - Repositorio público en GitHub - Sitio
+web accesible en GitHub Pages - <code>ENTREGA.md</code> con enlaces</p>
+<hr />
+<h2 id="cumplimiento-de-requisitos">✅ Cumplimiento de Requisitos</h2>
+<h3 id="requisitos-obligatorios">Requisitos Obligatorios</h3>
+<table>
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 26%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Requisito</th>
+<th style="text-align: center;">Estado</th>
+<th style="text-align: left;">Evidencia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Repositorio público en GitHub</td>
+<td style="text-align: center;">✅</td>
+<td
+style="text-align: left;">https://github.com/AGarciaRipalda/proyecto-mc-ilerna</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mínimo 5 páginas</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">8 páginas creadas</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tema configurado</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">Material Theme</td>
+</tr>
+<tr>
+<td style="text-align: left;">Navegación definida</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;"><code>mkdocs.yml</code> con estructura
+completa</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nombre del sitio</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">“Documentación Mc Ilerna Albor Croft”</td>
+</tr>
+<tr>
+<td style="text-align: left;">Títulos y subtítulos</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">H1 a H6 en todas las páginas</td>
+</tr>
+<tr>
+<td style="text-align: left;">Listas ordenadas</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">Requisitos, pasos de procedimientos</td>
+</tr>
+<tr>
+<td style="text-align: left;">Listas no ordenadas</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">Características, funcionalidades</td>
+</tr>
+<tr>
+<td style="text-align: left;">Enlaces</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">Internos y a secciones</td>
+</tr>
+<tr>
+<td style="text-align: left;">Imágenes</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">Diagramas Mermaid</td>
+</tr>
+<tr>
+<td style="text-align: left;">Bloques de código</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">40+ bloques (SQL, Bash, Python, YAML)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Bloques desplegables</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">10+ admonitions</td>
+</tr>
+<tr>
+<td style="text-align: left;">Despliegue en GitHub Pages</td>
+<td style="text-align: center;">✅</td>
+<td
+style="text-align: left;">https://AGarciaRipalda.github.io/proyecto-mc-ilerna/</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sitio accesible</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">Verificado y funcional</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="extras-implementados-1-punto">Extras Implementados (+1
+punto)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Extra</th>
+<th style="text-align: center;">Estado</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Extensiones de MkDocs</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">pymdownx (highlight, superfences,
+etc.)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Buscador habilitado</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">Plugin search en español</td>
+</tr>
+<tr>
+<td style="text-align: left;">Iconos y admonitions</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">info, note, warning, danger</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tablas avanzadas</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">25+ tablas con alineación</td>
+</tr>
+<tr>
+<td style="text-align: left;">Diagramas Mermaid</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">5 diagramas profesionales</td>
+</tr>
+<tr>
+<td style="text-align: left;">Modo claro/oscuro</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">Paleta dual configurada</td>
+</tr>
+<tr>
+<td style="text-align: left;">Navegación por pestañas</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">navigation.tabs activado</td>
+</tr>
+<tr>
+<td style="text-align: left;">Botón copiar código</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">content.code.copy activado</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="puntos-fuertes-del-proyecto">🎯 Puntos Fuertes del Proyecto</h2>
+<h3 id="completitud">1. Completitud</h3>
+<ul>
+<li>Documentación exhaustiva de todo el ciclo de desarrollo</li>
+<li>Desde requisitos hasta implementación y seguridad</li>
+<li>Ningún aspecto del proyecto queda sin documentar</li>
+</ul>
+<h3 id="profesionalidad">2. Profesionalidad</h3>
+<ul>
+<li>Uso de herramientas estándar de la industria (MkDocs, Git,
+GitHub)</li>
+<li>Diagramas técnicos de alta calidad</li>
+<li>Código SQL bien estructurado y comentado</li>
+</ul>
+<h3 id="usabilidad">3. Usabilidad</h3>
+<ul>
+<li>Navegación intuitiva y clara</li>
+<li>Búsqueda integrada para localizar información rápidamente</li>
+<li>Diseño responsive (funciona en móviles, tablets y escritorio)</li>
+</ul>
+<h3 id="estética">4. Estética</h3>
+<ul>
+<li>Tema moderno y atractivo (Material)</li>
+<li>Colores corporativos coherentes</li>
+<li>Modo oscuro para reducir fatiga visual</li>
+</ul>
+<h3 id="técnica">5. Técnica</h3>
+<ul>
+<li>Normalización hasta 3FN correctamente aplicada</li>
+<li>Restricciones de integridad bien definidas</li>
+<li>Índices de optimización estratégicos</li>
+<li>Cumplimiento RGPD documentado</li>
+</ul>
+<hr />
+<h2 id="recursos-adicionales">📚 Recursos Adicionales</h2>
+<h3 id="documentación-de-referencia">Documentación de Referencia</h3>
+<ul>
+<li><strong>MkDocs:</strong> https://www.mkdocs.org/</li>
+<li><strong>Material Theme:</strong>
+https://squidfunk.github.io/mkdocs-material/</li>
+<li><strong>PyMdown Extensions:</strong>
+https://facelessuser.github.io/pymdown-extensions/</li>
+<li><strong>Mermaid:</strong> https://mermaid-js.github.io/</li>
+</ul>
+<h3 id="comandos-útiles">Comandos Útiles</h3>
+<h4 id="previsualización-local">Previsualización Local</h4>
+<div class="sourceCode" id="cb31"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mkdocs</span> serve</span></code></pre></div>
+<p>Abre el sitio en <code>http://127.0.0.1:8000/</code></p>
+<h4 id="construcción-del-sitio">Construcción del Sitio</h4>
+<div class="sourceCode" id="cb32"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mkdocs</span> build</span></code></pre></div>
+<p>Genera el sitio estático en la carpeta <code>site/</code></p>
+<h4 id="despliegue-a-github-pages">Despliegue a GitHub Pages</h4>
+<div class="sourceCode" id="cb33"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mkdocs</span> gh-deploy</span></code></pre></div>
+<p>Publica automáticamente en GitHub Pages</p>
+<hr />
+<h2 id="conclusión">🏆 Conclusión</h2>
+<p>Este proyecto representa una <strong>documentación técnica completa,
+profesional y de alta calidad</strong> para un sistema de gestión de
+bases de datos aplicado a un restaurante de comida rápida.</p>
+<h3 id="logros-principales">Logros Principales</h3>
+<ol type="1">
+<li><strong>Cumplimiento Total:</strong> Todos los requisitos
+obligatorios cumplidos</li>
+<li><strong>Extras Implementados:</strong> Múltiples características
+adicionales (+1 punto)</li>
+<li><strong>Calidad Técnica:</strong> Diseño de base de datos
+normalizado y optimizado</li>
+<li><strong>Presentación Profesional:</strong> Sitio web moderno y fácil
+de navegar</li>
+<li><strong>Documentación Exhaustiva:</strong> Más de 1,800 líneas de
+contenido técnico</li>
+</ol>
+<h3 id="valor-educativo">Valor Educativo</h3>
+<p>Este proyecto demuestra competencia en: - Análisis y diseño de bases
+de datos relacionales - Normalización de datos - Implementación SQL -
+Documentación técnica profesional - Uso de herramientas de desarrollo
+modernas (Git, GitHub, MkDocs) - Cumplimiento normativo (RGPD)</p>
+<hr />
+<p><strong>Alumno:</strong> Alejandro García Ripalda<br />
+<strong>Fecha:</strong> 16 de enero de 2026<br />
+<strong>Módulo:</strong> ASGBD - ASIR<br />
+<strong>Centro:</strong> Albor Croft, Jerez de la Frontera</p>
+<hr />
+<h2 id="contacto-y-enlaces">📞 Contacto y Enlaces</h2>
+<ul>
+<li><strong>Repositorio GitHub:</strong>
+https://github.com/AGarciaRipalda/proyecto-mc-ilerna</li>
+<li><strong>Sitio Web:</strong>
+https://AGarciaRipalda.github.io/proyecto-mc-ilerna/</li>
+<li><strong>Tema MkDocs Material:</strong>
+https://squidfunk.github.io/mkdocs-material/</li>
+</ul>
+<hr />
+<p><em>Documento generado el 19 de enero de 2026</em></p>
+</body>
+</html>
