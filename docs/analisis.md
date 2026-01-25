@@ -205,16 +205,34 @@ REPARTIDOR (Num_Repartidor, Nombre, Apellidos, DNI, Telefono, Matricula_Moto, Tu
 
 ---
 
-### 2. Ingredientes como Texto Descriptivo
+### 2. Normalización Completa de Ingredientes
 
-**Decisión:** Almacenar ingredientes como campo de texto libre en lugar de tabla normalizada.
+**Decisión:** Crear tabla dedicada `INGREDIENTE` y tabla de relación `PRODUCTO_INGREDIENTE` para normalizar completamente los ingredientes.
 
 **Justificación:**
-- ✅ **Simplicidad:** No se requiere gestión de stock de ingredientes
-- ✅ **Flexibilidad:** Permite descripciones personalizadas para alérgenos
-- ✅ **Alcance:** El sistema se centra en ventas, no en producción
+- ✅ **Cumplimiento de 3FN:** Elimina dependencias transitivas y grupos repetitivos
+- ✅ **Gestión de alérgenos:** Permite consultas eficientes por tipo de alérgeno (gluten, lactosa, etc.)
+- ✅ **Eliminación de redundancia:** Cada ingrediente se almacena una sola vez
+- ✅ **Consistencia:** UNIQUE en nombre evita duplicados
+- ✅ **Cumplimiento normativo:** Facilita reportes precisos para normativas sanitarias
+- ✅ **Consultas potentes:** Permite filtrar productos por ingredientes o alérgenos
 
-**Contexto:** Según acta de la segunda reunión, el cliente priorizó la facilidad de gestión de alérgenos sobre la normalización completa de ingredientes.
+**Contexto:** Según acta de la tercera reunión (21/01/2026), el Responsable de Calidad y la nutricionista plantearon la necesidad de mejorar la gestión de alérgenos para cumplir con normativas sanitarias más estrictas. Se decidió cambiar el enfoque inicial (texto libre) por normalización completa.
+
+**Implementación:**
+```sql
+-- Tabla de ingredientes
+INGREDIENTE (Cod_Ingrediente, Nombre UNIQUE, Alergeno, Tipo_Alergeno)
+
+-- Relación N:M con productos
+PRODUCTO_INGREDIENTE (Cod_Producto, Cod_Ingrediente)
+  PRIMARY KEY (Cod_Producto, Cod_Ingrediente)
+```
+
+**Ventajas sobre texto libre:**
+- Consultas como "productos sin lactosa" son simples JOINs en lugar de búsquedas de texto
+- Cambiar información de un ingrediente (ej: marcar como alérgeno) afecta automáticamente a todos los productos
+- Permite estadísticas: ingredientes más usados, productos por alérgeno, etc.
 
 ---
 

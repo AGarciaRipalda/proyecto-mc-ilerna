@@ -8,31 +8,35 @@ El diseño lógico transforma el modelo conceptual E/R en un esquema relacional 
 
 ### Esquema de Tablas
 
-El sistema se compone de **9 tablas** organizadas en tres categorías:
+El sistema se compone de **11 tablas** organizadas en cuatro categorías:
 
 ```mermaid
 graph TD
     A[Tablas Maestras] --> B[REPARTIDOR]
-    A --> C[PRODUCTO]
-    A --> D[MENU]
+    A --> C[INGREDIENTE]
+    A --> D[PRODUCTO]
+    A --> E[MENU]
     
-    E[Tablas de Pedidos] --> F[PEDIDO]
-    E --> G[PEDIDO_VENTANILLA]
-    E --> H[PEDIDO_DOMICILIO]
+    F[Tablas de Pedidos] --> G[PEDIDO]
+    F --> H[PEDIDO_VENTANILLA]
+    F --> I[PEDIDO_DOMICILIO]
     
-    I[Tablas de Relación] --> J[COMPOSICION_MENU]
-    I --> K[DETALLE_PEDIDO_PRODUCTO]
-    I --> L[DETALLE_PEDIDO_MENU]
+    J[Tablas de Relación] --> K[PRODUCTO_INGREDIENTE]
+    J --> L[COMPOSICION_MENU]
+    J --> M[DETALLE_PEDIDO_PRODUCTO]
+    J --> N[DETALLE_PEDIDO_MENU]
     
-    F -.extensión.-> G
-    F -.extensión.-> H
-    H --> B
-    J --> D
-    J --> C
-    K --> F
+    G -.extensión.-> H
+    G -.extensión.-> I
+    I --> B
+    K --> D
     K --> C
-    L --> F
+    L --> E
     L --> D
+    M --> G
+    M --> D
+    N --> G
+    N --> E
 ```
 
 ---
@@ -63,15 +67,35 @@ graph TD
 
 ---
 
+### Tabla: INGREDIENTE
+
+**Descripción:** Catálogo de ingredientes con información de alérgenos para gestión sanitaria.
+
+| Columna | Tipo de Dato | Restricciones | Descripción |
+|:--------|:-------------|:--------------|:------------|
+| `Cod_Ingrediente` | INT | **PK**, AUTO_INCREMENT, NOT NULL | Identificador único del ingrediente |
+| `Nombre` | VARCHAR(100) | **UNIQUE**, NOT NULL | Nombre del ingrediente (clave alternativa) |
+| `Alergeno` | BOOLEAN | NOT NULL, DEFAULT FALSE | Indica si es un alérgeno |
+| `Tipo_Alergeno` | VARCHAR(50) | NULL | Tipo de alérgeno (Gluten, Lactosa, Frutos secos, etc.) |
+
+**Claves:**
+- **Primaria:** `Cod_Ingrediente`
+- **Alternativa:** `Nombre` (UNIQUE)
+
+**Restricciones:**
+- `UNIQUE (Nombre)` - Evita duplicados de ingredientes
+- `DEFAULT FALSE` en `Alergeno` - Por defecto no es alérgeno
+
+---
+
 ### Tabla: PRODUCTO
 
-**Descripción:** Catálogo de productos individuales disponibles para la venta.
+**Descripción:** Catálogo de productos individuales disponibles para la venta. Los ingredientes se gestionan mediante la tabla de relación PRODUCTO_INGREDIENTE.
 
 | Columna | Tipo de Dato | Restricciones | Descripción |
 |:--------|:-------------|:--------------|:------------|
 | `Cod_Producto` | INT | **PK**, AUTO_INCREMENT, NOT NULL | Código único del producto |
 | `Nombre` | VARCHAR(100) | NOT NULL | Nombre comercial del producto |
-| `Ingredientes` | TEXT | NULL | Descripción de ingredientes (gestión de alérgenos) |
 | `Precio` | DECIMAL(6,2) | CHECK > 0, NOT NULL | Precio unitario actual |
 
 **Claves:**
@@ -79,6 +103,8 @@ graph TD
 
 **Restricciones:**
 - `CHECK (Precio > 0)` - El precio debe ser positivo
+
+**Nota:** El campo `Ingredientes` fue eliminado. Ahora se gestiona mediante normalización completa con las tablas INGREDIENTE y PRODUCTO_INGREDIENTE
 
 ---
 
@@ -158,6 +184,30 @@ graph TD
 **Cardinalidad:** 
 - 1:1 con PEDIDO (extensión)
 - N:1 con REPARTIDOR (un repartidor puede entregar múltiples pedidos)
+
+---
+
+### Tabla: PRODUCTO_INGREDIENTE
+
+**Descripción:** Tabla de relación N:M que define qué ingredientes componen cada producto.
+
+| Columna | Tipo de Dato | Restricciones | Descripción |
+|:--------|:-------------|:--------------|:------------|
+| `Cod_Producto` | INT | **PK**, **FK** → PRODUCTO, NOT NULL | Código del producto |
+| `Cod_Ingrediente` | INT | **PK**, **FK** → INGREDIENTE, NOT NULL | Código del ingrediente |
+
+**Claves:**
+- **Primaria Compuesta:** (`Cod_Producto`, `Cod_Ingrediente`)
+- **Foráneas:**
+  - `Cod_Producto` → `PRODUCTO(Cod_Producto)` ON DELETE CASCADE
+  - `Cod_Ingrediente` → `INGREDIENTE(Cod_Ingrediente)` ON DELETE RESTRICT
+
+**Cardinalidad:**
+- N:M entre PRODUCTO e INGREDIENTE
+- Un producto puede tener múltiples ingredientes
+- Un ingrediente puede estar en múltiples productos
+
+**Ejemplo:** Hamburguesa Simple contiene: Pan, Carne, Lechuga, Tomate
 
 ---
 

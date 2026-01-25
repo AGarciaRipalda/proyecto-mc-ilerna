@@ -1,0 +1,136 @@
+Proyecto Segunda Evaluación Módulo ASGBD 
+Juan Sevillano Hernández 
+Proyecto Segunda 
+Evaluación 
+Administración de Sistemas 
+Gestores de Bases de Datos 
+ 
+CFGM 2º ASIR 
+ 
+Departamento de Informática 
+
+Proyecto Segunda Evaluación Módulo ASGBD 
+Juan Sevillano Hernández 
+Licencia: 
+ 
+Reconocimiento – No Comercial – Compartir Igual (by -nc-sa):  
+No se permite un uso comercial de la obra original ni de las posibles 
+obras derivadas, la distribución de las cuales se debe hacer con una 
+licencia igual a la que regula la obra original. 
+ 
+ 
+  
+
+Proyecto Segunda Evaluación Módulo ASGBD 
+Juan Sevillano Hernández 
+Índice de Contenidos 
+1. Objetivo del Proyecto. .......................................................................................................... 4 
+2. Enunciado del Proyecto. ....................................................................................................... 4 
+3. Entrega. ................................................................................................................................ 5 
+4. Criterios de Corrección. ........................................................................................................ 5 
+ 
+  
+Proyecto Segunda Evaluación Módulo ASGBD 
+Juan Sevillano Hernández 
+1. Objetivo del Proyecto. 
+El objetivo del proyecto es diseñar y construir una base de datos relacional para el 
+establecimiento de comida rápida Mc Ilerna Albor Croft, capaz de gestionar los pedidos (en 
+ventanilla y a domicilio), los productos y menús ofrecidos, los repartidores y l a información 
+necesaria para elaborar estadísticas sobre la actividad del negocio. 
+2. Enunciado del Proyecto. 
+El establecimiento de comida rápida Mc Ilerna Albor Croft desea desarrollar un sistema de 
+información que permita gestionar sus pedidos y disponer de datos fiables para la elaboración 
+de estadísticas y toma de decisiones. Para ello, necesita diseñar una base de datos que cumpla 
+las siguientes especificaciones: 
+• Los pedidos para consumir en el establecimiento se recogen en ventanilla y los 
+pedidos de entrega a domicilio se recogen por teléfono, sin descartar que puedan 
+existir otros tipos de pedidos en el futuro. 
+• Todos los pedidos estarán numerados de forma correlativa y se almacenará, como 
+mínimo, la fecha y la hora del pedido. 
+• En los pedidos de ventanilla se registrará el número de ventanilla. 
+• En los pedidos a domicilio se registrarán el teléfono de contacto, la población y la 
+dirección de entrega. 
+• La empresa cuenta con una serie de repartidores, identificados por: número de 
+repartidor, nombre, primer apellido, segundo apellido, DNI, número de teléfono, 
+matrícula de la moto y turno de trabajo (Mañana, Tarde o Noche). 
+• A cada pedido a domicilio se le asignará exactamente un repartidor responsable del 
+reparto. 
+• El establecimiento ofrece una serie de productos (por ejemplo: hamburguesa 
+simple, doble, alemana, coca -cola pequeña/mediana/grande, ensalada, etc.), 
+identificados por un código de producto, nombre, ingredientes y precio. 
+• Además, se ofrecen menús especiales, cada uno compuesto por un conjunto de 
+productos. De cada menú se almacenará un código de menú, nombre del menú, 
+descripción y precio. 
+• Un pedido puede incluir varios menús en distintas cantidades y/o varios productos 
+sueltos en distintas cantidades. 
+A partir de esta información, el alumnado deberá: 
+1) Elaborar el Modelo Entidad/Relación (E/R) que represente adecuadamente el dominio 
+anterior. 
+2) Transformar el modelo E/R en un esquema relacional, realizando la normalización de las 
+tablas (al menos hasta 3FN), indicando claves primarias, claves ajenas y demás 
+restricciones de integridad. 
+3) Simulación de entrevistas con el cliente. Es fundamental elaborar una documentación 
+completa que incluya, como mínimo, la fecha y hora de inicio, fecha y hora de 
+finalización, asistentes, puntos tratados, acuerdos alcanzados y posibles acciones a 
+realizar. 
+4) Diccionario de datos. Ejemplo: 
+DICCIONARIO DE DATOS 
+BASE DE DATOS: _________________________ 
+Entidad/Relación: ________________________ 
+Proyecto Segunda Evaluación Módulo ASGBD 
+Juan Sevillano Hernández 
+Atributos: 
+Nombre Tipo Unidad Valores Valor por 
+defecto 
+Restricciones Descripción Ejemplo 
+        
+        
+ 
+• Nombre del atributo. El nombre que aparece en el MER 
+• Tipo. El rango de valores que puede tomar (caracteres, números, fechas, textos, … especificando su tamaño)  
+• Unidad. En qué está expresado el dato 
+• Valor. Posibles valores y su significado (en caso de que los haya) 
+• Valor por defecto. Valor que se asignará al dato en caso de que no se inserte específicamente. 
+• Restricciones. Especificaciones que debe cumplir el dato (no nulo, autoincremental, sin signo, atributo primario, …) 
+• Descripción. Descripción del atributo 
+• Ejemplo. Un ejemplo de un dato real que puede contener el atributo. 
+ 
+5) Implementar la base de datos en lenguaje SQL, creando las tablas, las claves y las 
+restricciones necesarias. 
+6) Insertar un conjunto mínimo de datos de prueba que permita comprobar el correcto 
+funcionamiento del diseño. 
+3. Entrega. 
+La entrega se realizará en la tarea creada para ello.  El proyecto se entregará a través de la 
+tarea creada por el profesor, siguiendo las instrucciones de formato que se especifiquen en este 
+punto de Entrega. 
+No se admitirá entregas posteriores a la fecha indicada en dicha tarea creada. 
+• Fecha de entrega del proyecto completo: viernes 30 de enero de 2026. 
+Será entregada la carpeta principal del proyecto comprimida en formato RAR, ZIP, 7ZIP, etc., 
+cualquier entrega realizada que no tenga dicho formato no será evaluado . El nombre de la 
+carpeta debe ser la siguiente estructura Proyecto2Ev-Apellido1Apellido2Nombre. 
+4. Criterios de Corrección. 
+Se evaluará que el proyecto contenga todos los puntos descritos en el apartado 2. 
+La calificación del proyecto se realizará atendiendo a los siguientes criterios orientativos: 
+1. Análisis y Modelo Entidad/Relación (30%) 
+a. Identificación correcta de entidades, atributos y relaciones. 
+b. Elección adecuada de tipos de relación (1:1, 1:N, N:M) y participación. 
+c. Claridad del diagrama (nombres significativos, cardinalidades bien indicadas, 
+ausencia de ambigüedades). 
+2. Esquema relacional y normalización (30%) 
+a. Traducción correcta del modelo E/R a tablas. 
+Proyecto Segunda Evaluación Módulo ASGBD 
+Juan Sevillano Hernández 
+b. Aplicación adecuada de las formas normales (al menos hasta 3FN). 
+c. Definición correcta de claves primarias y foráneas. 
+d. Justificación de las decisiones de diseño cuando sea necesario. 
+3. Implementación en SQL (30%) 
+a. Corrección en la sintaxis de las sentencias CREATE TABLE. 
+b. Declaración de restricciones de integridad (PRIMARY KEY, FOREIGN KEY, 
+UNIQUE, NOT NULL, CHECK, etc.) cuando proceda. 
+c. Coherencia entre el esquema diseñado en papel y la implementación real en 
+SQL. 
+d. Inserción de datos de prueba coherentes con el modelo. 
+4. Presentación, claridad y documentación (10%) 
+a. Entrega ordenada y legible (diagramas, esquemas y código). 
+b. Comentarios o breve memoria explicativa del diseño. 
+c. Uso adecuado de terminología técnica y corrección ortográfica. 

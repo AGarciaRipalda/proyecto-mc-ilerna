@@ -11,7 +11,8 @@ Se han identificado entidades fuertes que sostienen la estructura y entidades de
     * **Pedido_Ventanilla:** Incluye el atributo `Num_Ventanilla`.
     * **Pedido_Domicilio:** Incluye `Telefono_Contacto`, `Poblacion` y `Direccion_Entrega`.
 * **Repartidor:** Contiene `Num_Repartidor` (PK), Nombre, Apellidos, DNI, Teléfono, Matrícula de la moto y Turno (Mañana, Tarde, Noche).
-* **Producto:** Catálogo individual con `Cod_Producto`, Nombre, Ingredientes y Precio.
+* **Ingrediente:** Catálogo de ingredientes con `Cod_Ingrediente` (PK), Nombre (UNIQUE), Alergeno (booleano) y Tipo_Alergeno (gluten, lactosa, etc.).
+* **Producto:** Catálogo individual con `Cod_Producto`, Nombre y Precio. Los ingredientes se gestionan mediante relación N:M.
 * **Menú:** Entidad comercial con `Cod_Menu`, Nombre, Descripción y Precio.
 
 A continuación se presenta el diseño conceptual del sistema
@@ -29,6 +30,13 @@ erDiagram
         string Turno "CHECK (M, T, N)"
     }
 
+    INGREDIENTE {
+        int Cod_Ingrediente PK "Autoincremental"
+        string Nombre UK "Unique Key"
+        boolean Alergeno "DEFAULT FALSE"
+        string Tipo_Alergeno "Gluten, Lactosa, etc."
+    }
+
     PEDIDO {
         int Num_Pedido PK "Correlativo"
         date Fecha
@@ -38,7 +46,6 @@ erDiagram
     PRODUCTO {
         int Cod_Producto PK
         string Nombre
-        string Ingredientes "Texto descriptivo"
         decimal Precio "CHECK > 0"
     }
 
@@ -72,6 +79,11 @@ erDiagram
     
     %% Estas tablas existen físicamente en el SQL para gestionar cantidades
 
+    PRODUCTO_INGREDIENTE {
+        int Cod_Producto PK, FK
+        int Cod_Ingrediente PK, FK
+    }
+
     DETALLE_PEDIDO_PRODUCTO {
         int Num_Pedido PK, FK
         int Cod_Producto PK, FK
@@ -103,15 +115,19 @@ erDiagram
     %% 2. Relación Repartidor - Pedido Domicilio (1:N)
     REPARTIDOR ||--o{ PEDIDO_DOMICILIO : "entrega"
 
-    %% 3. Relación Pedido - Producto (N:M resuelta con entidad débil)
+    %% 3. Relación Producto - Ingrediente (N:M)
+    PRODUCTO ||--|{ PRODUCTO_INGREDIENTE : "contiene"
+    INGREDIENTE ||--|{ PRODUCTO_INGREDIENTE : "forma parte de"
+
+    %% 4. Relación Pedido - Producto (N:M resuelta con entidad débil)
     PEDIDO ||--|{ DETALLE_PEDIDO_PRODUCTO : "contiene"
     PRODUCTO ||--|{ DETALLE_PEDIDO_PRODUCTO : "está en"
 
-    %% 4. Relación Pedido - Menú (N:M resuelta con entidad débil)
+    %% 5. Relación Pedido - Menú (N:M resuelta con entidad débil)
     PEDIDO ||--|{ DETALLE_PEDIDO_MENU : "contiene"
     MENU ||--|{ DETALLE_PEDIDO_MENU : "está en"
 
-    %% 5. Relación Menú - Producto (N:M resuelta con entidad débil)
+    %% 6. Relación Menú - Producto (N:M resuelta con entidad débil)
     MENU ||--|{ COMPOSICION_MENU : "se compone de"
     PRODUCTO ||--|{ COMPOSICION_MENU : "forma parte de"
 ```
