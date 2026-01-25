@@ -2,6 +2,8 @@
 
 El Modelo Entidad/Relación (E/R) constituye la abstracción de la realidad empresarial de **Mc Ilerna Albor Croft**. La elección de las entidades y sus interrelaciones busca minimizar la redundancia mientras se maximiza la expresividad de los datos.
 
+> **Nota:** El sistema cuenta con **11 tablas** normalizadas a 3FN, incluyendo las nuevas tablas INGREDIENTE y PRODUCTO_INGREDIENTE para gestión de alérgenos.
+
 ## Entidades y Atributos Principales
 
 Se han identificado entidades fuertes que sostienen la estructura y entidades de especialización que aportan el detalle operativo:
