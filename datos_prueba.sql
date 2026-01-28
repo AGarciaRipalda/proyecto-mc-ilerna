@@ -1,7 +1,6 @@
 -- ============================================================
 -- DATOS DE PRUEBA: Mc Ilerna Albor Croft
 -- DESCRIPCIÓN: Datos de ejemplo para testing y validación
--- VERSIÓN: 2.0 (con normalización de ingredientes)
 -- FECHA: 21 de enero de 2026
 -- ============================================================
 
@@ -53,7 +52,7 @@ INSERT INTO PRODUCTO (Nombre, Precio) VALUES
 ('Helado de Vainilla', 2.00);
 
 -- ============================================================
--- PRODUCTO_INGREDIENTE (NUEVA TABLA - Relación N:M)
+-- PRODUCTO_INGREDIENTE (Relación N:M)
 -- ============================================================
 
 -- Hamburguesa Simple (Cod_Producto = 1)
